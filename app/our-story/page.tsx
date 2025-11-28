@@ -7,7 +7,7 @@ import Link from 'next/link';
 const milestones = [
   { year: '2023', title: 'The Spark', desc: 'Kevin Milol graduates with an EE degree, begins exploring ways to bring Cameroonian ingredients to the US market.' },
   { year: '2024', title: 'Research & Planning', desc: 'Deep dive into FDA requirements, supply chain logistics, and building relationships with farming cooperatives in Cameroon.' },
-  { year: '2025', title: 'Launch', desc: 'MartinSupplies & Co officially launches, bringing heritage-grown ingredients to American food professionals.' },
+  { year: '2025', title: 'Launch', desc: 'MartinSupplies. & CO officially launches, bringing heritage-grown ingredients to American food professionals.' },
 ];
 
 const values = [
@@ -53,7 +53,7 @@ export default function OurStoryPage() {
                 <span className="text-[var(--gray-400)]">Driven by purpose.</span>
               </h1>
               <p className="lead max-w-lg">
-                MartinSupplies was born from a simple question: why can't American 
+                MartinSupplies<span className="text-[var(--yellow)]">.</span> &amp; CO was born from a simple question: why can't American 
                 chefs access the ingredients that shaped cuisines for generations?
               </p>
             </motion.div>
@@ -111,7 +111,7 @@ export default function OurStoryPage() {
                 </p>
 
                 <p>
-                  What started as curiosity became research. Then planning. Then MartinSupplies & Co.
+                  What started as curiosity became research. Then planning. Then MartinSupplies<span className="text-[var(--yellow)]">.</span> &amp; CO.
                 </p>
               </div>
             </motion.div>
@@ -135,7 +135,7 @@ export default function OurStoryPage() {
               </h2>
               <div className="space-y-4 text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
                 <p>
-                  MartinSupplies isn't just an import business. We're building a bridge 
+                  MartinSupplies<span className="text-[var(--yellow)]">.</span> &amp; CO isn't just an import business. We're building a bridge 
                   between Central African agriculture and modern American gastronomy.
                 </p>
                 <p>
@@ -325,7 +325,7 @@ export default function OurStoryPage() {
                   Kevin Milol
                 </p>
                 <p className="text-sm text-[var(--black)]/60" style={{ fontWeight: 300 }}>
-                  Founder, MartinSupplies & Co
+                  Founder, MartinSupplies<span className="text-[var(--yellow)]">.</span> &amp; CO
                 </p>
               </div>
             </motion.div>

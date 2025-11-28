@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import Logo from './Logo';
 
 const menuItems = [
   { 
@@ -24,7 +25,7 @@ const menuItems = [
       { name: 'Distributors', href: '/industries' },
     ]
   },
-  { name: 'Standards & Practices', href: '/standards' },
+  { name: 'Standards', href: '/standards' },
   { name: 'Story', href: '/our-story' },
   { name: 'Wholesale', href: '/wholesale' },
   { name: 'Contact', href: '/contact' },
@@ -69,20 +70,7 @@ export default function Navigation() {
         <div className="container-custom">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="group">
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="flex items-baseline gap-1"
-              >
-                <span 
-                  className="text-xl font-semibold tracking-tight text-[var(--black)]"
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  MartinSupplies
-                </span>
-                <span className="text-[var(--yellow)] text-2xl leading-none">.</span>
-              </motion.div>
-            </Link>
+            <Logo variant="dark" size="md" animated={true} />
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-8">

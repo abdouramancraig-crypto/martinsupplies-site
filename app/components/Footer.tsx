@@ -25,6 +25,43 @@ const footerLinks = {
   ],
 };
 
+// Animated Logo for Footer
+function FooterLogo() {
+  const dotVariants = {
+    initial: { scale: 1 },
+    hover: {
+      scale: [1, 1.4, 1],
+      transition: {
+        duration: 0.4,
+        ease: 'easeInOut',
+      }
+    }
+  };
+
+  return (
+    <Link href="/" className="inline-block group">
+      <motion.div 
+        className="text-2xl font-semibold tracking-tight flex items-baseline"
+        style={{ fontFamily: 'var(--font-display)' }}
+        whileHover="hover"
+      >
+        <span className="text-white">MartinSupplies</span>
+        <motion.span
+          className="text-[var(--yellow)] mx-0"
+          variants={dotVariants}
+          style={{ 
+            display: 'inline-block',
+            textShadow: '0 0 10px rgba(254, 255, 2, 0.5)'
+          }}
+        >
+          .
+        </motion.span>
+        <span className="text-white font-light ml-1">&amp; CO</span>
+      </motion.div>
+    </Link>
+  );
+}
+
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -45,15 +82,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
           {/* Brand & Newsletter */}
           <div className="lg:col-span-5">
-            <Link href="/" className="inline-block mb-6">
-              <span 
-                className="text-2xl font-semibold text-white"
-                style={{ fontFamily: 'var(--font-display)' }}
-              >
-                MartinSupplies
-              </span>
-              <span className="text-[var(--yellow)] text-3xl leading-none">.</span>
-            </Link>
+            <div className="mb-6">
+              <FooterLogo />
+            </div>
             
             <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-sm" style={{ fontWeight: 300 }}>
               Premium heritage-grown ingredients from Central Africa. 
@@ -158,14 +189,14 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="footer-text-thin" suppressHydrationWarning>
-              © {new Date().getFullYear()} MartinSupplies & Co. All rights reserved.
+            <p className="footer-text-thin text-white/50" suppressHydrationWarning>
+              © {new Date().getFullYear()} MartinSupplies. & CO — All rights reserved.
             </p>
             <div className="flex gap-8">
-              <Link href="#" className="footer-text-thin hover:text-[var(--yellow)] transition-colors">
+              <Link href="#" className="footer-text-thin text-white/50 hover:text-[var(--yellow)] transition-colors">
                 Privacy
               </Link>
-              <Link href="#" className="footer-text-thin hover:text-[var(--yellow)] transition-colors">
+              <Link href="#" className="footer-text-thin text-white/50 hover:text-[var(--yellow)] transition-colors">
                 Terms
               </Link>
             </div>

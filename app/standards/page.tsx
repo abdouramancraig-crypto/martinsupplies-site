@@ -8,7 +8,7 @@ const sections = [
   {
     id: 'philosophy',
     title: '1. Our Regulatory Philosophy',
-    content: `At MartinSupplies & Co, every bag of corn, soy, cassava flour, and every kilo of Poivre de Penja or Mbongo we ship is treated as both food and responsibility.
+    content: `At MartinSupplies. & CO, every bag of corn, soy, cassava flour, and every kilo of Poivre de Penja or Mbongo we ship is treated as both food and responsibility.
 
 We design our import process to align with U.S. Food and Drug Administration (FDA) requirements for human foods imported into the United States — from facility registration and prior notice, to FSMA preventive controls, foreign supplier verification, and truthful labeling.
 
@@ -125,7 +125,7 @@ export default function StandardsPage() {
               Standards & Practices
             </h1>
             <p className="lead">
-              How MartinSupplies & Co aligns with FDA food import requirements.
+              How MartinSupplies<span className="text-[var(--yellow)]">.</span> &amp; CO aligns with FDA food import requirements.
             </p>
           </motion.div>
         </div>

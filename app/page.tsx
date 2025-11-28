@@ -439,7 +439,7 @@ function FounderSection() {
             
             <div className="space-y-4 text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
               <p>
-                MartinSupplies was founded by Kevin Milol — a first-generation American 
+                MartinSupplies<span className="text-[var(--yellow)]">.</span> &amp; CO was founded by Kevin Milol — a first-generation American 
                 with roots in Cameroon and a degree in Electrical Engineering from a U.S. university.
               </p>
               <p>
@@ -458,7 +458,7 @@ function FounderSection() {
                 Kevin Milol
               </p>
               <p className="text-sm text-[var(--gray-500)]" style={{ fontWeight: 300 }}>
-                Founder, MartinSupplies & Co
+                Founder, MartinSupplies<span className="text-[var(--yellow)]">.</span> &amp; CO
               </p>
             </div>
           </motion.div>
