@@ -33,7 +33,7 @@ We don't see compliance as a checkbox. It's the minimum level of respect for our
     list: [
       'Submit prior notice for each shipment of grains, flours, and spices before arrival at the first U.S. port',
       'Include accurate details on: Product identity and description, Manufacturer and shipper, Country of origin, Anticipated port of entry, U.S. consignee / importer',
-      'Coordinate with customs brokers to ensure confirmation numbers accompany shipments, so product isn't delayed or refused for procedural errors'
+      'Coordinate with customs brokers to ensure confirmation numbers accompany shipments, so product is not delayed or refused for procedural errors'
     ]
   },
   {
@@ -77,7 +77,7 @@ For bulk/B2B ingredients, our labeling and documentation focus on:`,
     title: '7. Import Alerts & Risk Management',
     content: `FDA maintains import alerts for products and firms subject to detention without physical examination (DWPE), based on safety concerns or repeated violations.`,
     list: [
-      'Proactively check FDA's import alert database for our product categories (spices, grains, flours) and our shipping partners/processors',
+      'Proactively check FDA import alert database for our product categories (spices, grains, flours) and our shipping partners/processors',
       'Avoid processors or exporters with patterns of regulatory issues',
       'Stay alert to emerging risks, such as recent cases where imported spices were subject to alerts due to contamination concerns'
     ]
@@ -98,8 +98,8 @@ For bulk/B2B ingredients, our labeling and documentation focus on:`,
     content: `Compliance isn't a one-time project. It's a moving line.`,
     list: [
       'Update our practices as FDA rules evolve, especially around FSMA implementation, labeling changes, and new import screening tools',
-      'Work with customs brokers, regulatory consultants, and our customers' QA teams to improve processes over time',
-      'Share clear, honest documentation about what we do today and what we're building toward'
+      'Work with customs brokers, regulatory consultants, and our customers QA teams to improve processes over time',
+      'Share clear, honest documentation about what we do today and what we are building toward'
     ]
   }
 ];
