@@ -25,7 +25,7 @@ export default function Logo({ variant = 'dark', size = 'md', animated = true }:
       scale: 1, 
       opacity: 1,
       transition: {
-        type: 'spring',
+        type: 'spring' as const,
         stiffness: 500,
         damping: 15,
         delay: 0.3,
@@ -35,7 +35,6 @@ export default function Logo({ variant = 'dark', size = 'md', animated = true }:
       scale: [1, 1.3, 1],
       transition: {
         duration: 0.4,
-        ease: 'easeInOut',
       }
     }
   };

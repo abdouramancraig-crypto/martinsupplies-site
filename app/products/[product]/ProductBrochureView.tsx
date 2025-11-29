@@ -176,9 +176,9 @@ export default function ProductBrochureView({ product }: Props) {
 
 // Product-specific footer sections
 function renderProductFooter(product: ProductContent) {
-  const isSpice = product.category === 'spice';
-  const isGrain = product.category === 'grain' || product.category === 'legume';
-  const isFlour = product.category === 'flour';
+  const isSpice = product.tag === 'Spice' || product.tag === 'Seed / Spice';
+  const isGrain = product.tag === 'Grain' || product.tag === 'Legume';
+  const isFlour = product.tag === 'Flour';
 
   return (
     <>
