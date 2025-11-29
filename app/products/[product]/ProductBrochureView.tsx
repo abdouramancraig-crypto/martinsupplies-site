@@ -28,6 +28,20 @@ export default function ProductBrochureView({ product }: Props) {
 
   return (
     <div className="bg-[var(--white)] text-[var(--black)]">
+      {/* Return to Catalog Button - Fixed Position */}
+      <Link href="/products" className="fixed top-24 left-6 z-40">
+        <motion.button
+          whileHover={{ scale: 1.05, x: -5 }}
+          whileTap={{ scale: 0.95 }}
+          className="flex items-center gap-2 px-4 py-2 bg-white border border-[var(--gray-200)] text-[var(--gray-700)] rounded-lg shadow-lg hover:border-[var(--yellow)] hover:bg-[var(--yellow)] hover:text-[var(--black)] transition-all"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          <span className="text-sm font-medium">Back to Catalog</span>
+        </motion.button>
+      </Link>
+
       {/* Hero */}
       <section className="pt-40 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 glow-subtle" />
@@ -38,6 +52,12 @@ export default function ProductBrochureView({ product }: Props) {
             transition={{ duration: 0.6 }}
             className="max-w-4xl"
           >
+            <Link href="/products" className="inline-flex items-center gap-2 text-[var(--gray-500)] hover:text-[var(--yellow)] text-sm mb-6 transition-colors">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Back to Product Catalog
+            </Link>
             <div className="divider mb-8" />
             <p className="text-sm text-[var(--gray-500)] mb-4" style={labelStyle}>
               MartinSupplies &amp; Co · Product Brochure

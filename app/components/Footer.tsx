@@ -6,11 +6,70 @@ import { useState } from 'react';
 
 const footerLinks = {
   products: [
-    { name: 'Corn', href: '/products/grains' },
-    { name: 'Soybeans', href: '/products/grains' },
-    { name: 'Poivre de Penja', href: '/products/spices' },
-    { name: 'Mbongo', href: '/products/spices' },
-    { name: 'Cassava Flour', href: '/products/flours' },
+    { 
+      name: 'Non-GMO Yellow Corn', 
+      href: '/products/non-gmo-yellow-corn',
+      humidity: '65-75%',
+      temperature: '20-28°C',
+      region: 'Western Highlands & Centre',
+      weather: 'Tropical, well-drained volcanic soil'
+    },
+    { 
+      name: 'Non-GMO White Corn', 
+      href: '/products/non-gmo-white-corn',
+      humidity: '60-70%',
+      temperature: '18-26°C',
+      region: 'Adamawa & North West',
+      weather: 'Semi-tropical highlands, rich soil'
+    },
+    { 
+      name: 'Soybeans', 
+      href: '/products/non-gmo-soybeans',
+      humidity: '70-80%',
+      temperature: '22-30°C',
+      region: 'Northern Cameroon highlands',
+      weather: 'Savannah climate, fertile soil'
+    },
+    { 
+      name: 'Poivre de Penja', 
+      href: '/products/poivre-de-penja',
+      humidity: '75-85%',
+      temperature: '24-30°C',
+      region: 'Penja Valley, Littoral Province',
+      weather: 'High humidity, mineral-rich volcanic soil'
+    },
+    { 
+      name: 'Mbongo', 
+      href: '/products/mbongo',
+      humidity: '70-80%',
+      temperature: '22-28°C',
+      region: 'Littoral & Centre regions',
+      weather: 'Equatorial rainforest, humid conditions'
+    },
+    { 
+      name: 'Njansang', 
+      href: '/products/njansang',
+      humidity: '75-85%',
+      temperature: '23-29°C',
+      region: 'Forest margins, Cameroon rainforest',
+      weather: 'Tropical rainforest, high moisture'
+    },
+    { 
+      name: 'Cassava Flour', 
+      href: '/products/cassava-flour',
+      humidity: '70-85%',
+      temperature: '24-30°C',
+      region: 'Centre & South regions',
+      weather: 'Tropical lowlands, rich organic soil'
+    },
+    { 
+      name: 'Tapioca Flour', 
+      href: '/products/tapioca-flour',
+      humidity: '70-85%',
+      temperature: '24-30°C',
+      region: 'Cassava processing clusters',
+      weather: 'Humid tropical climate, well-watered'
+    },
   ],
   company: [
     { name: 'Our Story', href: '/our-story' },
@@ -78,9 +137,9 @@ export default function Footer() {
     <footer className="bg-[var(--black)] text-white">
       {/* Main Footer */}
       <div className="container-custom py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Brand & Newsletter */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-12 mb-8">
             <div className="mb-6">
               <FooterLogo />
             </div>
@@ -117,27 +176,34 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
-          <div className="lg:col-span-2">
+          {/* Products Grid */}
+          <div className="lg:col-span-12 border-t border-white/10 pt-8">
             <h4 className="text-white/40 text-xs uppercase tracking-widest mb-6" style={{ fontWeight: 300 }}>
-              Products
+              Our Products — Optimal Growing Conditions
             </h4>
-            <ul className="space-y-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {footerLinks.products.map((link) => (
-                <li key={link.name}>
+                <div key={link.name} className="border-l-2 border-white/10 pl-4 hover:border-[var(--yellow)] transition-colors group">
                   <Link
                     href={link.href}
-                    className="text-white/70 hover:text-[var(--yellow)] text-sm transition-colors"
-                    style={{ fontWeight: 300 }}
+                    className="text-white/90 hover:text-[var(--yellow)] text-sm font-medium transition-colors block mb-2"
+                    style={{ fontWeight: 400 }}
                   >
                     {link.name}
                   </Link>
-                </li>
+                  <div className="space-y-1 text-xs text-white/50" style={{ fontWeight: 300 }}>
+                    <p><span className="text-white/40">Region:</span> {link.region}</p>
+                    <p><span className="text-white/40">Humidity:</span> {link.humidity}</p>
+                    <p><span className="text-white/40">Temperature:</span> {link.temperature}</p>
+                    <p className="text-white/40 italic text-[11px] mt-1">{link.weather}</p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
-          <div className="lg:col-span-2">
+          {/* Company & Resources */}
+          <div className="lg:col-span-6 border-t border-white/10 pt-8">
             <h4 className="text-white/40 text-xs uppercase tracking-widest mb-6" style={{ fontWeight: 300 }}>
               Company
             </h4>
@@ -156,7 +222,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-6 border-t border-white/10 pt-8">
             <h4 className="text-white/40 text-xs uppercase tracking-widest mb-6" style={{ fontWeight: 300 }}>
               Connect
             </h4>

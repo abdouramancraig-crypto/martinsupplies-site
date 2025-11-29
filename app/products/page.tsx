@@ -55,6 +55,33 @@ function HeroSection() {
 function CatalogSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [showCatalogPopup, setShowCatalogPopup] = useState(false);
+  const [catalogFormData, setCatalogFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleCatalogSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    // Reset after 3 seconds
+    setTimeout(() => {
+      setShowCatalogPopup(false);
+      setIsSubmitted(false);
+      setCatalogFormData({ name: '', company: '', email: '' });
+    }, 3000);
+  };
+
+  const handleCatalogInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCatalogFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   return (
     <section id="catalog" ref={ref} className="section-spacing border-t border-[var(--gray-200)]">
@@ -65,15 +92,162 @@ function CatalogSection() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <span className="footer-text-thin mb-4 block">Catalog</span>
-          <h2 style={{ fontFamily: 'var(--font-display)' }}>
-            MartinSupplies & Co Product Catalog
-          </h2>
-          <p className="text-[var(--gray-600)] mt-4 max-w-2xl" style={{ fontWeight: 300 }}>
-            Heritage-grown non-GMO grains and rare African spices, curated for chefs, 
-            distributors, and specialty manufacturers.
-          </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6">
+            <div>
+              <span className="footer-text-thin mb-4 block">Catalog</span>
+              <h2 style={{ fontFamily: 'var(--font-display)' }}>
+                MartinSupplies & Co Product Catalog
+              </h2>
+              <p className="text-[var(--gray-600)] mt-4 max-w-2xl" style={{ fontWeight: 300 }}>
+                Heritage-grown non-GMO grains and rare African spices, curated for chefs, 
+                distributors, and specialty manufacturers.
+              </p>
+            </div>
+            <motion.button
+              onClick={() => setShowCatalogPopup(true)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-[var(--yellow)] text-[var(--black)] font-semibold rounded-lg hover:bg-[var(--black)] hover:text-white transition-all shadow-lg flex items-center gap-2 whitespace-nowrap"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Download Our Catalog
+            </motion.button>
+          </div>
         </motion.div>
+
+        {/* Catalog Popup Modal */}
+        {showCatalogPopup && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => !isSubmitting && setShowCatalogPopup(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setShowCatalogPopup(false)}
+                className="absolute top-4 right-4 text-[var(--gray-400)] hover:text-[var(--black)] transition-colors"
+                disabled={isSubmitting}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center">
+                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'var(--font-display)' }}>
+                    Thank You!
+                  </h3>
+                  <p className="text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+                    You'll receive our full catalog and be among the first to know about new exotic products.
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+                      Download Our Catalog
+                    </h3>
+                    <p className="text-[var(--gray-600)] text-sm" style={{ fontWeight: 300 }}>
+                      Get instant access to our full product catalog with detailed technical sheets. 
+                      Plus, be notified when new exotic products become available and get early ordering access.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleCatalogSubmit} className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-[var(--gray-700)] mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={catalogFormData.name}
+                        onChange={handleCatalogInputChange}
+                        required
+                        placeholder="John Doe"
+                        className="w-full px-4 py-3 border border-[var(--gray-200)] rounded-lg focus:outline-none focus:border-[var(--yellow)] transition-colors"
+                        style={{ fontWeight: 300 }}
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-[var(--gray-700)] mb-2">
+                        Company Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="company"
+                        value={catalogFormData.company}
+                        onChange={handleCatalogInputChange}
+                        required
+                        placeholder="Your Company Inc."
+                        className="w-full px-4 py-3 border border-[var(--gray-200)] rounded-lg focus:outline-none focus:border-[var(--yellow)] transition-colors"
+                        style={{ fontWeight: 300 }}
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-[var(--gray-700)] mb-2">
+                        Email Address *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={catalogFormData.email}
+                        onChange={handleCatalogInputChange}
+                        required
+                        suppressHydrationWarning
+                        placeholder="john@company.com"
+                        className="w-full px-4 py-3 border border-[var(--gray-200)] rounded-lg focus:outline-none focus:border-[var(--yellow)] transition-colors"
+                        style={{ fontWeight: 300 }}
+                      />
+                    </div>
+
+                    <div className="bg-[var(--gray-50)] p-4 rounded-lg">
+                      <div className="flex items-start gap-2 text-xs text-[var(--gray-600)]">
+                        <svg className="w-4 h-4 text-[var(--yellow)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <div>
+                          By signing up, you'll receive:
+                          <ul className="mt-1 space-y-1 ml-4 list-disc">
+                            <li>Full technical product sheets</li>
+                            <li>Early access to new exotic products</li>
+                            <li>Priority ordering notifications</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full px-6 py-4 bg-[var(--yellow)] text-[var(--black)] font-semibold rounded-lg hover:bg-[var(--black)] hover:text-white transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? 'Processing...' : 'Get Catalog & Subscribe'}
+                    </button>
+                  </form>
+                </>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {productCatalog.map((product, index) => (

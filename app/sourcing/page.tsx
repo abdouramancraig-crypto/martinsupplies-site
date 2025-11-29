@@ -369,12 +369,16 @@ export default function SourcingPage() {
                   ].map((doc) => (
                     <button
                       key={doc}
-                      className="flex items-center gap-3 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-left"
+                      className="relative flex items-center gap-3 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-left cursor-not-allowed opacity-75"
+                      disabled
                     >
                       <svg className="w-5 h-5 text-[var(--accent-gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                       </svg>
-                      <span className="text-white text-sm">{doc}</span>
+                      <div className="flex-1">
+                        <span className="text-white text-sm block">{doc}</span>
+                        <span className="text-[var(--accent-gold)] text-xs">Coming Soon</span>
+                      </div>
                     </button>
                   ))}
                 </div>
@@ -391,7 +395,7 @@ export default function SourcingPage() {
                 <p className="text-[var(--dark-gray)]/70 mb-6">
                   Enter your lot number to view complete origin and processing documentation.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 max-w-xl">
+                <div className="flex flex-col sm:flex-row gap-4 max-w-xl mb-6">
                   <input
                     type="text"
                     placeholder="Enter lot number (e.g., CMR-YC-2024-0847)"
@@ -401,6 +405,17 @@ export default function SourcingPage() {
                     Look Up
                   </button>
                 </div>
+                <p className="text-[var(--dark-gray)]/60 text-sm mb-4">
+                  Need help with lot traceability or have questions about our documentation?
+                </p>
+                <Link href="/contact">
+                  <motion.button 
+                    whileHover={{ scale: 1.02 }} 
+                    className="px-6 py-3 bg-[var(--primary-dark)] text-white font-semibold rounded-lg hover:bg-[var(--accent-gold)] hover:text-[var(--primary-dark)] transition-colors"
+                  >
+                    Contact Us
+                  </motion.button>
+                </Link>
               </div>
             </div>
           </motion.section>
@@ -428,78 +443,154 @@ export default function SourcingPage() {
                 </p>
               </div>
 
-              {/* Interactive Timeline */}
-              <div className="relative">
-                {/* Progress Line */}
-                <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gray-100 -translate-y-1/2" />
-                <motion.div 
-                  className="hidden lg:block absolute top-1/2 left-0 h-1 bg-[var(--accent-gold)] -translate-y-1/2"
-                  initial={{ width: '0%' }}
-                  animate={{ width: `${((activeStep - 1) / (processingSteps.length - 1)) * 100}%` }}
-                  transition={{ duration: 0.5 }}
-                />
-
-                {/* Steps */}
-                <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 lg:gap-4">
+              {/* Modern Processing Timeline */}
+              <div className="relative bg-gradient-to-br from-[var(--light-gray)] to-white rounded-3xl p-8 md:p-12 shadow-lg">
+                {/* Progress Bar */}
+                <div className="hidden lg:flex items-center justify-between mb-16 relative">
+                  <div className="absolute top-6 left-0 right-0 h-0.5 bg-gray-200 z-0" />
+                  <motion.div 
+                    className="absolute top-6 left-0 h-0.5 bg-gradient-to-r from-[var(--accent-gold)] to-[var(--secondary-gold)] z-0"
+                    initial={{ width: '0%' }}
+                    animate={{ width: `${((activeStep - 1) / (processingSteps.length - 1)) * 100}%` }}
+                    transition={{ duration: 0.6, ease: 'easeInOut' }}
+                  />
+                  
                   {processingSteps.map((step) => (
                     <motion.button
                       key={step.step}
                       onClick={() => setActiveStep(step.step)}
-                      whileHover={{ y: -5 }}
-                      className={`relative text-left lg:text-center ${
-                        activeStep === step.step ? 'z-10' : ''
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`relative z-10 flex flex-col items-center transition-all ${
+                        activeStep === step.step ? 'transform scale-110' : ''
                       }`}
                     >
-                      {/* Step Number */}
-                      <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold transition-all ${
-                        step.step <= activeStep 
-                          ? 'bg-[var(--accent-gold)] text-white' 
-                          : 'bg-gray-100 text-[var(--dark-gray)]/50'
-                      }`}>
+                      <motion.div 
+                        className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-lg transition-all ${
+                          step.step <= activeStep 
+                            ? 'bg-gradient-to-br from-[var(--accent-gold)] to-[var(--secondary-gold)] text-white shadow-[var(--accent-gold)]/30' 
+                            : 'bg-white text-[var(--dark-gray)]/40 border-2 border-gray-200'
+                        }`}
+                        animate={activeStep === step.step ? { 
+                          boxShadow: ['0 0 0 0 rgba(226, 179, 52, 0.4)', '0 0 0 15px rgba(226, 179, 52, 0)'],
+                        } : {}}
+                        transition={{ duration: 1.5, repeat: activeStep === step.step ? Infinity : 0 }}
+                      >
                         {step.step}
-                      </div>
-                      
-                      <h4 className={`font-semibold text-sm mb-1 transition-colors ${
-                        activeStep === step.step ? 'text-[var(--primary-dark)]' : 'text-[var(--dark-gray)]/60'
+                      </motion.div>
+                      <span className={`mt-3 text-xs font-medium text-center max-w-[80px] transition-colors ${
+                        activeStep === step.step ? 'text-[var(--primary-dark)]' : 'text-[var(--dark-gray)]/50'
                       }`}>
                         {step.title}
-                      </h4>
-                      <p className="text-xs text-[var(--accent-gold)]">{step.duration}</p>
+                      </span>
                     </motion.button>
                   ))}
+                </div>
+
+                {/* Mobile Step Selector */}
+                <div className="lg:hidden mb-8">
+                  <div className="flex gap-2 overflow-x-auto pb-4">
+                    {processingSteps.map((step) => (
+                      <button
+                        key={step.step}
+                        onClick={() => setActiveStep(step.step)}
+                        className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                          activeStep === step.step
+                            ? 'bg-[var(--accent-gold)] text-white'
+                            : 'bg-white border border-gray-200 text-[var(--dark-gray)]/60'
+                        }`}
+                      >
+                        {step.step}. {step.title}
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Active Step Detail */}
                 <motion.div
                   key={activeStep}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="mt-12 bg-[var(--light-gray)] rounded-2xl p-8 md:p-12"
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className="bg-white rounded-2xl p-8 md:p-10 shadow-md border border-gray-100"
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     <div>
-                      <span className="text-[var(--accent-gold)] font-bold text-lg">
-                        Step {processingSteps[activeStep - 1].step}
-                      </span>
-                      <h3 className="text-[var(--primary-dark)] text-2xl mt-2 mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[var(--accent-gold)] to-[var(--secondary-gold)] text-white font-bold text-lg">
+                          {processingSteps[activeStep - 1].step}
+                        </span>
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[var(--accent-gold)]/10 rounded-full">
+                          <svg className="w-4 h-4 text-[var(--accent-gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span className="text-[var(--accent-gold)] text-sm font-medium">
+                            {processingSteps[activeStep - 1].duration}
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <h3 className="text-[var(--primary-dark)] text-3xl font-bold mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
                         {processingSteps[activeStep - 1].title}
                       </h3>
-                      <p className="text-[var(--dark-gray)]/70 leading-relaxed">
+                      
+                      <p className="text-[var(--dark-gray)]/80 leading-relaxed text-lg mb-6">
                         {processingSteps[activeStep - 1].description}
                       </p>
-                      <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-[var(--accent-gold)]/10 rounded-full">
-                        <svg className="w-4 h-4 text-[var(--accent-gold)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span className="text-[var(--accent-gold)] text-sm font-medium">
-                          {processingSteps[activeStep - 1].duration}
-                        </span>
+
+                      {/* Step Navigation */}
+                      <div className="flex items-center gap-3">
+                        <button
+                          onClick={() => setActiveStep(Math.max(1, activeStep - 1))}
+                          disabled={activeStep === 1}
+                          className="px-4 py-2 rounded-lg border border-gray-200 text-sm font-medium text-[var(--dark-gray)] hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                        >
+                          ← Previous
+                        </button>
+                        <button
+                          onClick={() => setActiveStep(Math.min(processingSteps.length, activeStep + 1))}
+                          disabled={activeStep === processingSteps.length}
+                          className="px-4 py-2 rounded-lg bg-[var(--accent-gold)] text-white text-sm font-medium hover:bg-[var(--secondary-gold)] disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                        >
+                          Next →
+                        </button>
                       </div>
                     </div>
-                    <div className="aspect-video rounded-xl bg-gradient-to-br from-[var(--accent-gold)]/20 to-[var(--accent-gold)]/5" />
+                    
+                    <div className="relative">
+                      <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-[var(--accent-gold)]/20 via-[var(--accent-gold)]/10 to-transparent overflow-hidden shadow-inner">
+                        <motion.div
+                          initial={{ scale: 1.1, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ duration: 0.5 }}
+                          className="w-full h-full flex items-center justify-center"
+                        >
+                          <div className="text-8xl opacity-10">
+                            {activeStep === 1 ? '🌱' : activeStep === 2 ? '☀️' : activeStep === 3 ? '🔍' : activeStep === 4 ? '🔬' : activeStep === 5 ? '⚙️' : '📦'}
+                          </div>
+                        </motion.div>
+                      </div>
+                      <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-[var(--accent-gold)]/20 to-transparent rounded-full blur-2xl" />
+                      <div className="absolute -top-4 -left-4 w-32 h-32 bg-gradient-to-br from-[var(--primary-dark)]/10 to-transparent rounded-full blur-2xl" />
+                    </div>
                   </div>
                 </motion.div>
+
+                {/* Processing Stats */}
+                <div className="grid grid-cols-3 gap-6 mt-10">
+                  <div className="text-center p-4 bg-white rounded-xl border border-gray-100">
+                    <div className="text-2xl font-bold text-[var(--accent-gold)] mb-1">30</div>
+                    <div className="text-xs text-[var(--dark-gray)]/60 uppercase tracking-wider">Days Total</div>
+                  </div>
+                  <div className="text-center p-4 bg-white rounded-xl border border-gray-100">
+                    <div className="text-2xl font-bold text-[var(--accent-gold)] mb-1">6</div>
+                    <div className="text-xs text-[var(--dark-gray)]/60 uppercase tracking-wider">Quality Checks</div>
+                  </div>
+                  <div className="text-center p-4 bg-white rounded-xl border border-gray-100">
+                    <div className="text-2xl font-bold text-[var(--accent-gold)] mb-1">100%</div>
+                    <div className="text-xs text-[var(--dark-gray)]/60 uppercase tracking-wider">Traceable</div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.section>
