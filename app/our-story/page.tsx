@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 
@@ -162,14 +163,26 @@ export default function OurStoryPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-[4/3] bg-[var(--black)] relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <p className="text-white/20 text-6xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>
-                    2025
+              <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/chef-preparation.jpg"
+                  alt="Professional chef preparing dishes with MartinSupplies ingredients"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--black)]/40 to-transparent" />
+                
+                {/* Caption overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <p className="text-sm italic">
+                    "The authenticity and quality are unmatched in the industry."
                   </p>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[var(--yellow)]/20 to-transparent" />
               </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-32 h-32 bg-[var(--yellow)]/20 rounded-full blur-2xl -z-10" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[var(--brown)]/20 rounded-full blur-2xl -z-10" />
             </motion.div>
           </div>
         </div>

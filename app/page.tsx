@@ -682,85 +682,6 @@ function SolutionStatement() {
   );
 }
 
-// Building Bridge Section
-function BuildingBridgeSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  return (
-    <section ref={ref} className="section-spacing bg-[var(--gray-50)]">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-block px-4 py-1.5 bg-[var(--yellow)]/10 text-[var(--brown)] text-xs font-medium rounded-full mb-6 tracking-wider uppercase">
-              Our Mission
-            </span>
-            
-            <h2 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-              More Than an Import Business
-            </h2>
-            
-            <p className="text-2xl text-[var(--gray-700)] mb-8 leading-relaxed" style={{ fontFamily: 'var(--font-display)', fontWeight: 300 }}>
-              MartinSupplies<span className="text-[var(--yellow)]">.</span> &amp; CO isn't just an import business.
-            </p>
-            
-            <p className="text-xl text-[var(--gray-600)] mb-6 leading-relaxed" style={{ fontWeight: 300 }}>
-              We're <strong className="text-[var(--black)] font-semibold">building a bridge</strong> between 
-              Central African agriculture and modern American gastronomy.
-            </p>
-            
-            <div className="space-y-4 text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
-              <p>
-                From the volcanic soils of Cameroon to the kitchens of Michelin-starred restaurants, 
-                we connect heritage farming communities with chefs who demand authenticity, 
-                quality, and story.
-              </p>
-              <p>
-                Every shipment carries more than ingredients—it carries tradition, sustainability, 
-                and the promise of flavor that can't be replicated anywhere else in the world.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Chef Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-2xl">
-              <Image
-                src="/images/chef-preparation.jpg"
-                alt="Professional chef preparing dishes with MartinSupplies ingredients"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[var(--black)]/40 to-transparent" />
-              
-              {/* Caption overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <p className="text-sm italic">
-                  "The authenticity and quality are unmatched in the industry."
-                </p>
-              </div>
-            </div>
-            
-            {/* Decorative element */}
-            <div className="absolute -top-4 -right-4 w-32 h-32 bg-[var(--yellow)]/20 rounded-full blur-2xl -z-10" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[var(--brown)]/20 rounded-full blur-2xl -z-10" />
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 // Final CTA Section
 function FinalCTA() {
   const ref = useRef(null);
@@ -828,7 +749,6 @@ export default function Home() {
       <TestimonialsCarousel />
       <ProblemStatement />
       <SolutionStatement />
-      <BuildingBridgeSection />
       <FinalCTA />
     </>
   );
