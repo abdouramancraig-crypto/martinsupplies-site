@@ -144,14 +144,14 @@ export default function Footer() {
               <FooterLogo />
             </div>
             
-            <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-sm" style={{ fontWeight: 300 }}>
+            <p className="text-white/60 text-sm leading-relaxed mb-8 max-w-sm" style={{ fontWeight: 400 }}>
               Premium heritage-grown ingredients from Central Africa. 
               Traceable, non-GMO, story-rich products for discerning food professionals.
             </p>
 
             {/* Newsletter */}
             <div>
-              <p className="text-white/40 text-xs uppercase tracking-widest mb-3" style={{ fontWeight: 300 }}>
+              <p className="text-white/40 text-xs uppercase tracking-widest mb-3" style={{ fontWeight: 400 }}>
                 Industry Updates
               </p>
               <form onSubmit={handleSubmit} className="flex gap-2">
@@ -178,7 +178,7 @@ export default function Footer() {
 
           {/* Products Grid */}
           <div className="lg:col-span-12 border-t border-white/10 pt-8">
-            <h4 className="text-white/40 text-xs uppercase tracking-widest mb-6" style={{ fontWeight: 300 }}>
+            <h4 className="text-white/40 text-xs uppercase tracking-widest mb-6" style={{ fontWeight: 400 }}>
               Our Products — Optimal Growing Conditions
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -191,7 +191,7 @@ export default function Footer() {
                   >
                     {link.name}
                   </Link>
-                  <div className="space-y-1 text-xs text-white/50" style={{ fontWeight: 300 }}>
+                  <div className="space-y-1 text-xs text-white/50" style={{ fontWeight: 400 }}>
                     <p><span className="text-white/40">Region:</span> {link.region}</p>
                     <p><span className="text-white/40">Humidity:</span> {link.humidity}</p>
                     <p><span className="text-white/40">Temperature:</span> {link.temperature}</p>
@@ -204,7 +204,7 @@ export default function Footer() {
 
           {/* Company & Resources */}
           <div className="lg:col-span-6 border-t border-white/10 pt-8">
-            <h4 className="text-white/40 text-xs uppercase tracking-widest mb-6" style={{ fontWeight: 300 }}>
+            <h4 className="text-white/40 text-xs uppercase tracking-widest mb-6" style={{ fontWeight: 400 }}>
               Company
             </h4>
             <ul className="space-y-3">
@@ -213,7 +213,7 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     className="text-white/70 hover:text-[var(--yellow)] text-sm transition-colors"
-                    style={{ fontWeight: 300 }}
+                    style={{ fontWeight: 400 }}
                   >
                     {link.name}
                   </Link>
@@ -223,7 +223,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-6 border-t border-white/10 pt-8">
-            <h4 className="text-white/40 text-xs uppercase tracking-widest mb-6" style={{ fontWeight: 300 }}>
+            <h4 className="text-white/40 text-xs uppercase tracking-widest mb-6" style={{ fontWeight: 400 }}>
               Connect
             </h4>
             <ul className="space-y-3">
@@ -232,7 +232,7 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     className="text-white/70 hover:text-[var(--yellow)] text-sm transition-colors"
-                    style={{ fontWeight: 300 }}
+                    style={{ fontWeight: 400 }}
                   >
                     {link.name}
                   </Link>
@@ -241,8 +241,8 @@ export default function Footer() {
             </ul>
             
             <div className="mt-8 pt-6 border-t border-white/10">
-              <p className="text-white/40 text-xs" style={{ fontWeight: 300 }}>Houston, TX</p>
-              <a href="mailto:hello@martinsupplies.com" className="text-white/70 hover:text-[var(--yellow)] text-sm transition-colors" style={{ fontWeight: 300 }}>
+              <p className="text-white/40 text-xs" style={{ fontWeight: 400 }}>Houston, TX</p>
+              <a href="mailto:hello@martinsupplies.com" className="text-white/70 hover:text-[var(--yellow)] text-sm transition-colors" style={{ fontWeight: 400 }}>
                 hello@martinsupplies.com
               </a>
             </div>

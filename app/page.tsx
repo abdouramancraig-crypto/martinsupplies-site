@@ -116,7 +116,7 @@ function NonGMOCommitment() {
           <h2 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-display)' }}>
             OUR NON-GMO COMMITMENT
           </h2>
-          <p className="text-xl text-[var(--gray-600)] max-w-3xl mx-auto mb-8" style={{ fontWeight: 300 }}>
+          <p className="text-xl text-[var(--gray-600)] max-w-3xl mx-auto mb-8" style={{ fontWeight: 400 }}>
             Every kernel, bean, and spice is grown naturally in Cameroon's mineral-rich volcanic soil—
             without synthetic fertilizers, GMOs, or harmful pesticides.
           </p>
@@ -138,7 +138,7 @@ function NonGMOCommitment() {
             <h3 className="text-xl mb-3 font-semibold" style={{ fontFamily: 'var(--font-display)' }}>
               Volcanic Soil Advantage
             </h3>
-            <p className="text-[var(--gray-600)] text-sm leading-relaxed" style={{ fontWeight: 300 }}>
+            <p className="text-[var(--gray-600)] text-sm leading-relaxed" style={{ fontWeight: 400 }}>
               Cameroon's volcanic regions provide naturally mineral-rich soil (high in potassium, 
               phosphorus, and nitrogen) that enhances flavor intensity and nutritional density 
               without artificial inputs.
@@ -159,7 +159,7 @@ function NonGMOCommitment() {
             <h3 className="text-xl mb-3 font-semibold" style={{ fontFamily: 'var(--font-display)' }}>
               Perfect Subtropical Climate
             </h3>
-            <p className="text-[var(--gray-600)] text-sm leading-relaxed mb-4" style={{ fontWeight: 300 }}>
+            <p className="text-[var(--gray-600)] text-sm leading-relaxed mb-4" style={{ fontWeight: 400 }}>
               Year-round optimal growing conditions with stable temperatures (20-28°C), 
               consistent rainfall (1,500-3,000mm annually), and 70-85% humidity—ideal for 
               premium corn, soybeans, and rare spices.
@@ -194,7 +194,7 @@ function NonGMOCommitment() {
             <h3 className="text-xl mb-3 font-semibold" style={{ fontFamily: 'var(--font-display)' }}>
               Heritage Farming Practices
             </h3>
-            <p className="text-[var(--gray-600)] text-sm leading-relaxed" style={{ fontWeight: 300 }}>
+            <p className="text-[var(--gray-600)] text-sm leading-relaxed" style={{ fontWeight: 400 }}>
               Hand-harvested by smallholder farmers using generations-old techniques. 
               No synthetic pesticides, no genetic modification—just time-tested methods 
               that preserve authenticity and heritage.
@@ -237,7 +237,7 @@ function FDAStandards() {
             <h2 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-display)' }}>
               COMMITMENT TO FDA STANDARDS
             </h2>
-            <p className="text-lg text-[var(--gray-600)] mb-8 leading-relaxed" style={{ fontWeight: 300 }}>
+            <p className="text-lg text-[var(--gray-600)] mb-8 leading-relaxed" style={{ fontWeight: 400 }}>
               We don't just meet FDA requirements—we exceed them. Every shipment is backed 
               by rigorous documentation, testing, and compliance protocols designed to give 
               you complete peace of mind.
@@ -346,7 +346,7 @@ function SustainabilityPrograms() {
           <h2 className="text-4xl md:text-5xl text-white mb-6 drop-shadow-2xl" style={{ fontFamily: 'var(--font-display)', textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
             JOIN OUR PROGRAMS
           </h2>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto drop-shadow-lg" style={{ fontWeight: 300, textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto drop-shadow-lg" style={{ fontWeight: 400, textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
             Sustainability isn't an afterthought—it's built into every step of our supply chain.
           </p>
         </motion.div>
@@ -364,7 +364,7 @@ function SustainabilityPrograms() {
             <h3 className="text-2xl text-white mb-4 drop-shadow-lg" style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
               FULL CYCLE
             </h3>
-            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontWeight: 300 }}>
+            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontWeight: 400 }}>
               By-products from corn and soy processing are repurposed for animal feed 
               and biomass energy—nothing goes to waste.
             </p>
@@ -382,7 +382,7 @@ function SustainabilityPrograms() {
             <h3 className="text-2xl text-white mb-4 drop-shadow-lg" style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
               ZERO WASTE
             </h3>
-            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontWeight: 300 }}>
+            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontWeight: 400 }}>
               100% of our agricultural by-products are utilized. Crop residue becomes 
               feed or compost, ensuring complete resource utilization.
             </p>
@@ -400,7 +400,7 @@ function SustainabilityPrograms() {
             <h3 className="text-2xl text-white mb-4 drop-shadow-lg" style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
               LOW EMISSIONS
             </h3>
-            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontWeight: 300 }}>
+            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontWeight: 400 }}>
               Direct-ship logistics, minimal processing, and strategic port locations 
               reduce carbon footprint throughout our supply chain.
             </p>
@@ -654,7 +654,7 @@ function SolutionStatement() {
               We Deliver What Others Can't
             </h2>
             
-            <p className="text-2xl text-[var(--gray-700)] mb-12 leading-relaxed" style={{ fontFamily: 'var(--font-display)', fontWeight: 300 }}>
+            <p className="text-2xl text-[var(--gray-700)] mb-12 leading-relaxed" style={{ fontFamily: 'var(--font-display)', fontWeight: 400 }}>
               The finest Non-GMO corn, soybeans, and rare Central African spices—
               <span className="text-[var(--yellow)]"> hand-harvested in the best region in the world to grow them</span>.
             </p>
@@ -664,7 +664,7 @@ function SolutionStatement() {
                 <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                   🌋 Volcanic Terroir
                 </h3>
-                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontWeight: 300 }}>
+                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontWeight: 400 }}>
                   Grown in Cameroon's Penja valley and volcanic highlands—regions globally 
                   recognized for producing the world's most flavorful pepper, corn, and legumes.
                 </p>
@@ -674,7 +674,7 @@ function SolutionStatement() {
                 <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                   ✋ Hand-Harvested
                 </h3>
-                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontWeight: 300 }}>
+                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontWeight: 400 }}>
                   Picked at peak ripeness by skilled smallholder farmers using generations 
                   of inherited knowledge—never mechanized, always quality-first.
                 </p>
@@ -684,7 +684,7 @@ function SolutionStatement() {
                 <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                   📜 Fully Traceable
                 </h3>
-                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontWeight: 300 }}>
+                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontWeight: 400 }}>
                   Every batch includes farm-to-port documentation, lab certifications, 
                   and compliance records—transparency you can trust.
                 </p>
@@ -694,7 +694,7 @@ function SolutionStatement() {
                 <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                   ⚡ FDA Compliant
                 </h3>
-                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontWeight: 300 }}>
+                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontWeight: 400 }}>
                   Every shipment meets or exceeds FDA import requirements with full FSVP 
                   support and third-party verification.
                 </p>
@@ -734,7 +734,7 @@ function FinalCTA() {
             The Difference?
           </h2>
           
-          <p className="text-xl text-[var(--black)]/70 mb-10" style={{ fontWeight: 300 }}>
+          <p className="text-xl text-[var(--black)]/70 mb-10" style={{ fontWeight: 400 }}>
             Join Michelin-starred chefs, food manufacturers, and discerning buyers 
             who trust MartinSupplies for premium, traceable ingredients.
           </p>

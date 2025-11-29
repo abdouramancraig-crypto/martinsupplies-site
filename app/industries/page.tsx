@@ -90,11 +90,11 @@ export default function IndustriesPage() {
                   <h3 className="text-xl mb-3 group-hover:text-[var(--brown)] transition-colors" style={{ fontFamily: 'var(--font-display)' }}>
                     {industry.title}
                   </h3>
-                  <p className="text-sm text-[var(--gray-600)] mb-4 flex-grow" style={{ fontWeight: 300 }}>
+                  <p className="text-sm text-[var(--gray-600)] mb-4 flex-grow" style={{ fontWeight: 400 }}>
                     {industry.desc}
                   </p>
                   <div className="pt-4 border-t border-[var(--gray-100)]">
-                    <span className="text-xs uppercase tracking-widest text-[var(--gray-400)] mb-2 block" style={{ fontWeight: 300 }}>
+                    <span className="text-xs uppercase tracking-widest text-[var(--gray-400)] mb-2 block" style={{ fontWeight: 400 }}>
                       Our Solution
                     </span>
                     <p className="text-sm text-[var(--black)]" style={{ fontWeight: 400 }}>
@@ -131,7 +131,7 @@ export default function IndustriesPage() {
                 <span className="block text-4xl font-bold text-[var(--yellow)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
                   {stat.value}
                 </span>
-                <span className="text-white/60 text-sm" style={{ fontWeight: 300 }}>{stat.label}</span>
+                <span className="text-white/60 text-sm" style={{ fontWeight: 400 }}>{stat.label}</span>
               </motion.div>
             ))}
           </div>
@@ -152,7 +152,7 @@ export default function IndustriesPage() {
             <h2 className="mb-6" style={{ fontFamily: 'var(--font-display)' }}>
               Ready to transform your supply chain?
             </h2>
-            <p className="text-[var(--gray-600)] mb-8" style={{ fontWeight: 300 }}>
+            <p className="text-[var(--gray-600)] mb-8" style={{ fontWeight: 400 }}>
               Whatever your industry, we'll work with you to create a supply solution 
               that meets your unique requirements.
             </p>

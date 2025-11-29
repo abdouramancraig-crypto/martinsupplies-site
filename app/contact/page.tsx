@@ -131,7 +131,7 @@ export default function ContactPage() {
                   <h3 className="text-xl mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                     Message Sent
                   </h3>
-                  <p className="text-[var(--gray-600)] mb-6" style={{ fontWeight: 300 }}>
+                  <p className="text-[var(--gray-600)] mb-6" style={{ fontWeight: 400 }}>
                     We'll get back to you within 24 business hours.
                   </p>
                   <button
@@ -153,7 +153,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       />
                     </div>
                     <div>
@@ -166,7 +166,7 @@ export default function ContactPage() {
                         required
                         suppressHydrationWarning
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       />
                     </div>
                   </div>
@@ -180,7 +180,7 @@ export default function ContactPage() {
                         value={formData.company}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       />
                     </div>
                     <div>
@@ -191,7 +191,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       >
                         <option value="">Select topic...</option>
                         <option value="wholesale">Wholesale Inquiry</option>
@@ -213,7 +213,7 @@ export default function ContactPage() {
                       rows={5}
                       placeholder="How can we help?"
                       className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] placeholder-[var(--gray-400)] focus:outline-none focus:border-[var(--black)] transition-colors resize-none"
-                      style={{ fontWeight: 300 }}
+                      style={{ fontWeight: 400 }}
                     />
                   </div>
 
@@ -253,12 +253,12 @@ export default function ContactPage() {
                         <h3 className="text-lg" style={{ fontFamily: 'var(--font-display)' }}>
                           {office.city}, {office.state}
                         </h3>
-                        <span className="text-xs uppercase tracking-widest text-[var(--gray-400)]" style={{ fontWeight: 300 }}>
+                        <span className="text-xs uppercase tracking-widest text-[var(--gray-400)]" style={{ fontWeight: 400 }}>
                           {office.role}
                         </span>
                       </div>
                     </div>
-                    <div className="space-y-2 text-sm text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+                    <div className="space-y-2 text-sm text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
                       <p>{office.email}</p>
                       <p>{office.phone}</p>
                     </div>

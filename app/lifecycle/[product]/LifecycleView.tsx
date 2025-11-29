@@ -62,12 +62,12 @@ export default function LifecycleView({ product }: Props) {
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--yellow)] mb-4" style={labelStyle}>
               Zero-Waste Supply Chain Blueprint
             </p>
-            <h1 className="text-4xl md:text-6xl mb-6 text-white" style={{ fontFamily: 'var(--font-display)', fontWeight: 700 }}>
+            <h1 className="text-4xl md:text-6xl mb-6 text-white" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
               {product.name}
               <br />
               <span className="text-[var(--yellow)]">Full Life Cycle</span>
             </h1>
-            <p className="text-xl text-white/80 max-w-3xl leading-relaxed" style={{ fontWeight: 300 }}>
+            <p className="text-xl text-white/80 max-w-3xl leading-relaxed" style={{ fontWeight: 400 }}>
               A complete, research-verified journey from volcanic soil to circular use. Every phase documented, 
               every byproduct valued, zero waste to landfill.
             </p>
@@ -90,7 +90,7 @@ export default function LifecycleView({ product }: Props) {
             <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
               Complete Life Cycle
             </h2>
-            <p className="text-xl text-[var(--gray-600)] max-w-3xl mx-auto" style={{ fontWeight: 300 }}>
+            <p className="text-xl text-[var(--gray-600)] max-w-3xl mx-auto" style={{ fontWeight: 400 }}>
               From volcanic soil to circular economy - every phase researched, verified, and optimized for zero waste.
             </p>
           </motion.div>
@@ -125,7 +125,7 @@ export default function LifecycleView({ product }: Props) {
                     <h3 className="text-3xl font-bold text-[var(--black)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
                       {phase.title}
                     </h3>
-                    <p className="text-lg text-[var(--gray-600)] italic" style={{ fontWeight: 300 }}>
+                    <p className="text-lg text-[var(--gray-600)] italic" style={{ fontWeight: 400 }}>
                       {phase.description}
                     </p>
                   </div>
@@ -205,7 +205,7 @@ export default function LifecycleView({ product }: Props) {
             <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
               Every Component Has Value
             </h2>
-            <p className="text-xl text-[var(--gray-600)] max-w-3xl mx-auto" style={{ fontWeight: 300 }}>
+            <p className="text-xl text-[var(--gray-600)] max-w-3xl mx-auto" style={{ fontWeight: 400 }}>
               Nothing goes to waste. Every by-product is transformed into animal feed, biomass energy, or compost.
             </p>
           </motion.div>
@@ -284,7 +284,7 @@ export default function LifecycleView({ product }: Props) {
             <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
               Join Our Circular Economy
             </h2>
-            <p className="text-xl text-[var(--gray-600)] max-w-3xl mx-auto" style={{ fontWeight: 300 }}>
+            <p className="text-xl text-[var(--gray-600)] max-w-3xl mx-auto" style={{ fontWeight: 400 }}>
               Partner with us to keep {product.name} in continuous value creation through animal feed or biomass energy programs.
             </p>
           </motion.div>
@@ -307,7 +307,7 @@ export default function LifecycleView({ product }: Props) {
                 <h3 className="text-3xl font-bold text-green-900 mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                   Animal Feed Program
                 </h3>
-                <p className="text-green-800 mb-6 leading-relaxed" style={{ fontWeight: 300 }}>
+                <p className="text-green-800 mb-6 leading-relaxed" style={{ fontWeight: 400 }}>
                   {product.tag === 'Grain' || product.tag === 'Legume' || product.tag === 'Flour'
                     ? `Secondary grades and by-products of ${product.name} provide high-value nutrition for poultry, livestock, and aquaculture operations. Join our feed partner network.`
                     : `By-products and processing residues from ${product.name} contribute to specialized feed formulations and animal nutrition programs.`}
@@ -353,7 +353,7 @@ export default function LifecycleView({ product }: Props) {
                 <h3 className="text-3xl font-bold text-orange-900 mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                   Biomass Energy Program
                 </h3>
-                <p className="text-orange-800 mb-6 leading-relaxed" style={{ fontWeight: 300 }}>
+                <p className="text-orange-800 mb-6 leading-relaxed" style={{ fontWeight: 400 }}>
                   {product.tag === 'Grain' || product.tag === 'Legume' || product.tag === 'Flour'
                     ? `Husks, cobs, shells, and fiber from ${product.name} are converted into renewable energy pellets, briquettes, and biochar. Partner with us for sustainable biomass.`
                     : `Processing residues from ${product.name} contribute to biochar production, composting, and soil enrichment programs with circular benefits.`}
@@ -386,7 +386,7 @@ export default function LifecycleView({ product }: Props) {
           {/* If neither animal feed nor biomass applies */}
           {!lifecycle.animalFeed && !lifecycle.biomass && (
             <div className="text-center p-12 bg-[var(--gray-50)] rounded-2xl">
-              <p className="text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+              <p className="text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
                 As a premium spice, {product.name} focuses primarily on culinary applications with minimal by-products. 
                 Any processing residues are composted or used for essential oil extraction.
               </p>

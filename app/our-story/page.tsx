@@ -68,7 +68,7 @@ export default function OurStoryPage() {
               <div className="absolute inset-0 bg-[var(--gray-100)]" />
               <div className="absolute inset-0 bg-gradient-to-tr from-[var(--yellow)]/10 to-transparent" />
               <div className="absolute bottom-8 left-8 right-8 p-6 bg-white border border-[var(--gray-200)]">
-                <p className="text-sm text-[var(--gray-500)] mb-2" style={{ fontWeight: 300 }}>Founder</p>
+                <p className="text-sm text-[var(--gray-500)] mb-2" style={{ fontWeight: 400 }}>Founder</p>
                 <p className="font-medium" style={{ fontFamily: 'var(--font-display)' }}>Kevin Milol</p>
               </div>
             </motion.div>
@@ -91,7 +91,7 @@ export default function OurStoryPage() {
                 The beginning
               </h2>
               
-              <div className="space-y-6 text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+              <div className="space-y-6 text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
                 <p className="text-lg">
                   Kevin Milol grew up between two worlds — the volcanic highlands of Cameroon 
                   where his family farmed, and the American Midwest where he earned his 
@@ -134,7 +134,7 @@ export default function OurStoryPage() {
               <h2 className="mb-6" style={{ fontFamily: 'var(--font-display)' }}>
                 What we're building
               </h2>
-              <div className="space-y-4 text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+              <div className="space-y-4 text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
                 <p>
                   MartinSupplies<span className="text-[var(--yellow)]">.</span> &amp; CO isn't just an import business. We're building a bridge 
                   between Central African agriculture and modern American gastronomy.
@@ -220,7 +220,7 @@ export default function OurStoryPage() {
                 <h3 className="text-xl text-white mb-3" style={{ fontFamily: 'var(--font-display)' }}>
                   {milestone.title}
                 </h3>
-                <p className="text-white/60" style={{ fontWeight: 300 }}>
+                <p className="text-white/60" style={{ fontWeight: 400 }}>
                   {milestone.desc}
                 </p>
               </motion.div>
@@ -258,7 +258,7 @@ export default function OurStoryPage() {
                 <h3 className="text-lg mb-3" style={{ fontFamily: 'var(--font-display)' }}>
                   {value.title}
                 </h3>
-                <p className="text-sm text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+                <p className="text-sm text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
                   {value.desc}
                 </p>
               </motion.div>
@@ -295,7 +295,7 @@ export default function OurStoryPage() {
               <h2 className="mb-6" style={{ fontFamily: 'var(--font-display)' }}>
                 The land that shapes our products
               </h2>
-              <div className="space-y-4 text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+              <div className="space-y-4 text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
                 <p>
                   Cameroon's Western Highlands sit atop ancient volcanic formations. The soil 
                   here contains mineral compositions that have taken millions of years to form.
@@ -329,7 +329,7 @@ export default function OurStoryPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <blockquote className="text-2xl md:text-3xl text-[var(--black)] mb-8" style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}>
+              <blockquote className="text-2xl md:text-3xl text-[var(--black)] mb-8" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
                 "We're not just moving commodities. We're telling the story of volcanic soil, 
                 traditional farming, and ingredients that have shaped cuisines for generations."
               </blockquote>
@@ -337,7 +337,7 @@ export default function OurStoryPage() {
                 <p className="font-medium text-[var(--black)]" style={{ fontFamily: 'var(--font-display)' }}>
                   Kevin Milol
                 </p>
-                <p className="text-sm text-[var(--black)]/60" style={{ fontWeight: 300 }}>
+                <p className="text-sm text-[var(--black)]/60" style={{ fontWeight: 400 }}>
                   Founder, MartinSupplies<span className="text-[var(--yellow)]">.</span> &amp; CO
                 </p>
               </div>
@@ -360,7 +360,7 @@ export default function OurStoryPage() {
               <h2 className="mb-6" style={{ fontFamily: 'var(--font-display)' }}>
                 Ready to work together?
               </h2>
-              <p className="text-[var(--gray-600)] mb-8" style={{ fontWeight: 300 }}>
+              <p className="text-[var(--gray-600)] mb-8" style={{ fontWeight: 400 }}>
                 Whether you're a chef exploring new flavors or a manufacturer 
                 seeking consistent supply, we'd love to hear from you.
               </p>

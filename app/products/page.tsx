@@ -98,7 +98,7 @@ function CatalogSection() {
               <h2 style={{ fontFamily: 'var(--font-display)' }}>
                 MartinSupplies & Co Product Catalog
               </h2>
-              <p className="text-[var(--gray-600)] mt-4 max-w-2xl" style={{ fontWeight: 300 }}>
+              <p className="text-[var(--gray-600)] mt-4 max-w-2xl" style={{ fontWeight: 400 }}>
                 Heritage-grown non-GMO grains and rare African spices, curated for chefs, 
                 distributors, and specialty manufacturers.
               </p>
@@ -153,7 +153,7 @@ function CatalogSection() {
                   <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'var(--font-display)' }}>
                     Thank You!
                   </h3>
-                  <p className="text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+                  <p className="text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
                     You'll receive our full catalog and be among the first to know about new exotic products.
                   </p>
                 </div>
@@ -163,7 +163,7 @@ function CatalogSection() {
                     <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: 'var(--font-display)' }}>
                       Download Our Catalog
                     </h3>
-                    <p className="text-[var(--gray-600)] text-sm" style={{ fontWeight: 300 }}>
+                    <p className="text-[var(--gray-600)] text-sm" style={{ fontWeight: 400 }}>
                       Get instant access to our full product catalog with detailed technical sheets. 
                       Plus, be notified when new exotic products become available and get early ordering access.
                     </p>
@@ -182,7 +182,7 @@ function CatalogSection() {
                         required
                         placeholder="John Doe"
                         className="w-full px-4 py-3 border border-[var(--gray-200)] rounded-lg focus:outline-none focus:border-[var(--yellow)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       />
                     </div>
 
@@ -198,7 +198,7 @@ function CatalogSection() {
                         required
                         placeholder="Your Company Inc."
                         className="w-full px-4 py-3 border border-[var(--gray-200)] rounded-lg focus:outline-none focus:border-[var(--yellow)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       />
                     </div>
 
@@ -215,7 +215,7 @@ function CatalogSection() {
                         suppressHydrationWarning
                         placeholder="john@company.com"
                         className="w-full px-4 py-3 border border-[var(--gray-200)] rounded-lg focus:outline-none focus:border-[var(--yellow)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       />
                     </div>
 
@@ -261,7 +261,7 @@ function CatalogSection() {
                 <span 
                   className="inline-block px-3 py-1 text-xs uppercase tracking-widest mb-4 w-fit"
                   style={{ 
-                    fontWeight: 300,
+                    fontWeight: 400,
                     background: product.tag === 'Grain' ? 'var(--yellow)' : 
                                product.tag === 'Spice' ? 'var(--brown)' :
                                product.tag === 'Legume' ? '#3d8f5a' :
@@ -278,18 +278,18 @@ function CatalogSection() {
                   {product.name}
                 </h3>
                 
-                <p className="text-sm text-[var(--gray-600)] mb-4 flex-grow" style={{ fontWeight: 300 }}>
+                <p className="text-sm text-[var(--gray-600)] mb-4 flex-grow" style={{ fontWeight: 400 }}>
                   {product.description}
                 </p>
                 
                 <div className="space-y-2 mb-4 pt-4 border-t border-[var(--gray-100)]">
-                  <p className="text-xs text-[var(--gray-500)]" style={{ fontWeight: 300 }}>
+                  <p className="text-xs text-[var(--gray-500)]" style={{ fontWeight: 400 }}>
                     <span className="text-[var(--gray-400)]">Formats:</span> {product.formats}
                   </p>
-                  <p className="text-xs text-[var(--gray-500)]" style={{ fontWeight: 300 }}>
+                  <p className="text-xs text-[var(--gray-500)]" style={{ fontWeight: 400 }}>
                     <span className="text-[var(--gray-400)]">Packaging:</span> {product.packagingSummary}
                   </p>
-                  <p className="text-xs text-[var(--gray-500)]" style={{ fontWeight: 300 }}>
+                  <p className="text-xs text-[var(--gray-500)]" style={{ fontWeight: 400 }}>
                     <span className="text-[var(--gray-400)]">Origin:</span> {product.originSummary}
                   </p>
                 </div>
@@ -325,7 +325,7 @@ function SpecsSection() {
           <h2 style={{ fontFamily: 'var(--font-display)' }}>
             Product Specifications
           </h2>
-          <p className="text-[var(--gray-600)] mt-4 max-w-2xl" style={{ fontWeight: 300 }}>
+          <p className="text-[var(--gray-600)] mt-4 max-w-2xl" style={{ fontWeight: 400 }}>
             High-level specifications for our core products. Detailed COA and lab 
             analysis are available upon request for qualified buyers.
           </p>
@@ -349,7 +349,7 @@ function SpecsSection() {
                   <span 
                     className="inline-block px-2 py-0.5 text-xs uppercase tracking-widest"
                     style={{ 
-                      fontWeight: 300,
+                      fontWeight: 400,
                       background: product.tag === 'Grain' ? 'var(--yellow)' : 
                                  product.tag === 'Spice' ? 'var(--brown)' :
                                  product.tag === 'Legume' ? '#3d8f5a' :
@@ -390,7 +390,7 @@ function SpecsSection() {
                       { label: 'Shelf Life', value: product.shelfLife },
                     ].map((spec) => (
                       <div key={`${product.slug}-${spec.label}`} className="flex flex-col">
-                        <span className="text-xs uppercase tracking-widest text-[var(--gray-400)] mb-1" style={{ fontWeight: 300 }}>
+                        <span className="text-xs uppercase tracking-widest text-[var(--gray-400)] mb-1" style={{ fontWeight: 400 }}>
                           {spec.label}
                         </span>
                         <span className="text-sm text-[var(--gray-700)]" style={{ fontWeight: 400 }}>
@@ -475,7 +475,7 @@ function ContactSection() {
           <h2 style={{ fontFamily: 'var(--font-display)' }}>
             Contact & Wholesale Inquiries
           </h2>
-          <p className="text-[var(--gray-600)] mt-4 max-w-2xl" style={{ fontWeight: 300 }}>
+          <p className="text-[var(--gray-600)] mt-4 max-w-2xl" style={{ fontWeight: 400 }}>
             If you are a distributor, manufacturer, or chef exploring non-GMO grains 
             and heritage spices, share a bit about your operation and we will respond 
             with a tailored sourcing proposal.
@@ -491,7 +491,7 @@ function ContactSection() {
           >
             <div className="space-y-8">
               <div>
-                <p className="text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+                <p className="text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
                   <strong className="text-[var(--black)]" style={{ fontFamily: 'var(--font-display)' }}>
                     MartinSupplies & Co
                   </strong>
@@ -520,7 +520,7 @@ function ContactSection() {
 
               <div>
                 <span className="footer-text-thin block mb-2">Locations</span>
-                <p className="text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+                <p className="text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
                   Houston, Texas (primary U.S. base)
                   <br />
                   <span className="text-[var(--gray-400)]">
@@ -557,7 +557,7 @@ function ContactSection() {
                 <h3 className="text-xl mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                   Inquiry Received
                 </h3>
-                <p className="text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+                <p className="text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
                   We will review your request and respond with a tailored proposal within 24–48 hours.
                 </p>
                 <button
@@ -580,7 +580,7 @@ function ContactSection() {
                       required
                       placeholder="Full name"
                       className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] placeholder-[var(--gray-400)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                      style={{ fontWeight: 300 }}
+                      style={{ fontWeight: 400 }}
                     />
                   </div>
                   <div>
@@ -593,7 +593,7 @@ function ContactSection() {
                       required
                       placeholder="Company name"
                       className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] placeholder-[var(--gray-400)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                      style={{ fontWeight: 300 }}
+                      style={{ fontWeight: 400 }}
                     />
                   </div>
                 </div>
@@ -610,7 +610,7 @@ function ContactSection() {
                       placeholder="name@company.com"
                       suppressHydrationWarning
                       className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] placeholder-[var(--gray-400)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                      style={{ fontWeight: 300 }}
+                      style={{ fontWeight: 400 }}
                     />
                   </div>
                   <div>
@@ -622,7 +622,7 @@ function ContactSection() {
                       onChange={handleChange}
                       placeholder="e.g., Purchasing manager, Chef"
                       className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] placeholder-[var(--gray-400)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                      style={{ fontWeight: 300 }}
+                      style={{ fontWeight: 400 }}
                     />
                   </div>
                 </div>
@@ -636,7 +636,7 @@ function ContactSection() {
                     rows={3}
                     placeholder="Tell us which products you are exploring (corn, soy, cassava, Poivre de Penja, Mbongo, Njansang, etc.)."
                     className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] placeholder-[var(--gray-400)] focus:outline-none focus:border-[var(--black)] transition-colors resize-none"
-                    style={{ fontWeight: 300 }}
+                    style={{ fontWeight: 400 }}
                   />
                 </div>
 
@@ -649,7 +649,7 @@ function ContactSection() {
                     onChange={handleChange}
                     placeholder="e.g., 2 containers/year, 5 tons/month, pilot volumes"
                     className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] placeholder-[var(--gray-400)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                    style={{ fontWeight: 300 }}
+                    style={{ fontWeight: 400 }}
                   />
                 </div>
 
@@ -662,7 +662,7 @@ function ContactSection() {
                     rows={4}
                     placeholder="Share your timelines, current challenges, and what a great partnership looks like to you."
                     className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] placeholder-[var(--gray-400)] focus:outline-none focus:border-[var(--black)] transition-colors resize-none"
-                    style={{ fontWeight: 300 }}
+                    style={{ fontWeight: 400 }}
                   />
                 </div>
 

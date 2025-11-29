@@ -140,7 +140,7 @@ export default function StandardsPage() {
                 key={section.id}
                 href={`#${section.id}`}
                 className="text-sm text-[var(--gray-500)] hover:text-[var(--black)] transition-colors"
-                style={{ fontWeight: 300 }}
+                style={{ fontWeight: 400 }}
               >
                 {section.title.split('.')[0]}.{' '}
                 <span className="text-[var(--black)]">{section.title.split('.')[1]?.trim()}</span>
@@ -168,28 +168,28 @@ export default function StandardsPage() {
                   {section.title}
                 </h2>
                 {section.subtitle && (
-                  <p className="text-[var(--gray-500)] text-sm mb-6" style={{ fontWeight: 300 }}>
+                  <p className="text-[var(--gray-500)] text-sm mb-6" style={{ fontWeight: 400 }}>
                     {section.subtitle}
                   </p>
                 )}
                 
                 <div className="prose max-w-none">
                   {section.content.split('\n\n').map((paragraph, i) => (
-                    <p key={i} className="text-[var(--gray-600)] mb-4" style={{ fontWeight: 300 }}>
+                    <p key={i} className="text-[var(--gray-600)] mb-4" style={{ fontWeight: 400 }}>
                       {paragraph}
                     </p>
                   ))}
                   
                   {section.list && (
                     <div className="mt-6 space-y-4">
-                      <p className="text-sm uppercase tracking-widest text-[var(--gray-400)]" style={{ fontWeight: 300 }}>
+                      <p className="text-sm uppercase tracking-widest text-[var(--gray-400)]" style={{ fontWeight: 400 }}>
                         Our approach:
                       </p>
                       <ul className="space-y-3">
                         {section.list.map((item, i) => (
                           <li key={i} className="flex items-start gap-3">
                             <span className="text-[var(--yellow)] mt-1 flex-shrink-0">→</span>
-                            <span className="text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+                            <span className="text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
                               {item}
                             </span>
                           </li>
@@ -200,7 +200,7 @@ export default function StandardsPage() {
                   
                   {section.note && (
                     <div className="mt-6 p-4 bg-[var(--gray-50)] border-l-2 border-[var(--yellow)]">
-                      <p className="text-sm text-[var(--gray-600)] italic" style={{ fontWeight: 300 }}>
+                      <p className="text-sm text-[var(--gray-600)] italic" style={{ fontWeight: 400 }}>
                         {section.note}
                       </p>
                     </div>
@@ -226,7 +226,7 @@ export default function StandardsPage() {
               <h2 className="text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
                 Request our Compliance Dossier
               </h2>
-              <p className="text-white/60 mb-8" style={{ fontWeight: 300 }}>
+              <p className="text-white/60 mb-8" style={{ fontWeight: 400 }}>
                 If you are an import manager, QA lead, or regulatory contact, you can request our 
                 current documentation pack — includes facility info, process summaries, sample labels, 
                 and example documentation for a typical shipment.

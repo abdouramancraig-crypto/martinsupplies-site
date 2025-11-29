@@ -84,7 +84,7 @@ export default function WholesalePage() {
                 <h3 className="text-lg mb-2" style={{ fontFamily: 'var(--font-display)' }}>
                   {benefit.title}
                 </h3>
-                <p className="text-sm text-[var(--gray-600)]" style={{ fontWeight: 300 }}>
+                <p className="text-sm text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
                   {benefit.desc}
                 </p>
               </motion.div>
@@ -107,7 +107,7 @@ export default function WholesalePage() {
             <h2 style={{ fontFamily: 'var(--font-display)' }}>
               Partnership Programs
             </h2>
-            <p className="text-[var(--gray-600)] mt-4" style={{ fontWeight: 300 }}>
+            <p className="text-[var(--gray-600)] mt-4" style={{ fontWeight: 400 }}>
               Flexible programs designed to grow with your business.
             </p>
           </motion.div>
@@ -152,7 +152,7 @@ export default function WholesalePage() {
                 <h3 className={`text-2xl mb-2 ${tier.highlight ? 'text-white' : ''}`} style={{ fontFamily: 'var(--font-display)' }}>
                   {tier.name}
                 </h3>
-                <p className={`text-sm mb-4 ${tier.highlight ? 'text-white/70' : 'text-[var(--gray-600)]'}`} style={{ fontWeight: 300 }}>
+                <p className={`text-sm mb-4 ${tier.highlight ? 'text-white/70' : 'text-[var(--gray-600)]'}`} style={{ fontWeight: 400 }}>
                   {tier.desc}
                 </p>
                 <div className="mb-6">
@@ -163,7 +163,7 @@ export default function WholesalePage() {
                 </div>
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature) => (
-                    <li key={feature} className={`flex items-start gap-3 text-sm ${tier.highlight ? 'text-white/80' : 'text-[var(--gray-600)]'}`} style={{ fontWeight: 300 }}>
+                    <li key={feature} className={`flex items-start gap-3 text-sm ${tier.highlight ? 'text-white/80' : 'text-[var(--gray-600)]'}`} style={{ fontWeight: 400 }}>
                       <span className={tier.highlight ? 'text-[var(--yellow)]' : 'text-[var(--yellow)]'}>→</span>
                       {feature}
                     </li>
@@ -194,7 +194,7 @@ export default function WholesalePage() {
               <h2 className="mb-6" style={{ fontFamily: 'var(--font-display)' }}>
                 Request Wholesale Information
               </h2>
-              <p className="text-[var(--gray-600)] mb-8" style={{ fontWeight: 300 }}>
+              <p className="text-[var(--gray-600)] mb-8" style={{ fontWeight: 400 }}>
                 Fill out the form and our wholesale team will reach out within 24 business 
                 hours to discuss your needs and provide custom pricing.
               </p>
@@ -228,7 +228,7 @@ export default function WholesalePage() {
                   <h3 className="text-xl mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                     Inquiry Received
                   </h3>
-                  <p className="text-[var(--gray-600)] mb-6" style={{ fontWeight: 300 }}>
+                  <p className="text-[var(--gray-600)] mb-6" style={{ fontWeight: 400 }}>
                     We'll be in touch within 24 business hours.
                   </p>
                   <button
@@ -250,7 +250,7 @@ export default function WholesalePage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       />
                     </div>
                     <div>
@@ -262,7 +262,7 @@ export default function WholesalePage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       />
                     </div>
                   </div>
@@ -278,7 +278,7 @@ export default function WholesalePage() {
                         required
                         suppressHydrationWarning
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       />
                     </div>
                     <div>
@@ -289,7 +289,7 @@ export default function WholesalePage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       />
                     </div>
                   </div>
@@ -303,7 +303,7 @@ export default function WholesalePage() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       >
                         <option value="">Select type...</option>
                         <option value="restaurant">Restaurant</option>
@@ -321,7 +321,7 @@ export default function WholesalePage() {
                         value={formData.volume}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                        style={{ fontWeight: 300 }}
+                        style={{ fontWeight: 400 }}
                       >
                         <option value="">Select range...</option>
                         <option value="under-500">Under $500</option>
@@ -341,7 +341,7 @@ export default function WholesalePage() {
                       onChange={handleChange}
                       placeholder="e.g., Penja Pepper, Non-GMO Corn, Cassava Flour"
                       className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] placeholder-[var(--gray-400)] focus:outline-none focus:border-[var(--black)] transition-colors"
-                      style={{ fontWeight: 300 }}
+                      style={{ fontWeight: 400 }}
                     />
                   </div>
 
@@ -354,7 +354,7 @@ export default function WholesalePage() {
                       rows={4}
                       placeholder="Tell us about your business and specific needs..."
                       className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] placeholder-[var(--gray-400)] focus:outline-none focus:border-[var(--black)] transition-colors resize-none"
-                      style={{ fontWeight: 300 }}
+                      style={{ fontWeight: 400 }}
                     />
                   </div>
 
