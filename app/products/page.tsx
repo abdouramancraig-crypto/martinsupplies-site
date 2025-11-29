@@ -3,153 +3,7 @@
 import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
-
-// Product catalog data
-const catalogProducts = [
-  {
-    id: 'yellow-corn',
-    name: 'Non-GMO Yellow Corn',
-    tag: 'Grain',
-    description: 'Dense, heritage-grown yellow corn ideal for milling, tortilla and snack production, and African & Latin-inspired dishes.',
-    formats: 'Whole kernel / milled',
-    packaging: '25kg / 50kg bags',
-    origin: 'Central Africa',
-    specs: {
-      productType: 'Whole yellow maize grain',
-      nonGmoStatus: 'Grown from non-GMO seed; identity-preserved.',
-      moisture: '< 14%',
-      foreignMatter: 'Within standard grain tolerances; cleaned and sorted.',
-      packagingDetail: '25kg / 50kg woven sacks (food-contact liner on request).',
-      shelfLife: '12 months from production (stored properly)',
-      applications: 'Tortillas, snacks, milling, animal feed, brewing',
-    }
-  },
-  {
-    id: 'white-corn',
-    name: 'Non-GMO White Corn',
-    tag: 'Grain',
-    description: 'Clean, versatile white maize for fufu blends, porridges, specialty flour, and artisanal milling.',
-    formats: 'Whole kernel / milled',
-    packaging: '25kg / 50kg bags',
-    origin: 'Central Africa',
-    specs: {
-      productType: 'Whole white maize grain',
-      nonGmoStatus: 'Grown from non-GMO seed; identity-preserved.',
-      moisture: '< 14%',
-      foreignMatter: 'Within standard grain tolerances; cleaned and sorted.',
-      packagingDetail: '25kg / 50kg woven sacks (food-contact liner on request).',
-      shelfLife: '12 months from production (stored properly)',
-      applications: 'Fufu, porridge, specialty flour, ethnic foods',
-    }
-  },
-  {
-    id: 'soybeans',
-    name: 'Non-GMO Soybeans',
-    tag: 'Legume',
-    description: 'High-protein, non-GMO soybeans suited for tofu, plant-based products, and premium feed formulations.',
-    formats: 'Whole bean',
-    packaging: '25kg / 50kg bags',
-    origin: 'Central Africa',
-    specs: {
-      productType: 'Whole soybeans, non-GMO',
-      nonGmoStatus: 'Identity-preserved non-GMO.',
-      protein: '~38–40% (as is)',
-      moisture: '< 13%',
-      foreignMatter: 'Cleaned and graded.',
-      packagingDetail: '25kg / 50kg woven sacks.',
-      shelfLife: '12 months from production',
-      applications: 'Tofu, tempeh, soy milk, plant proteins, premium feed',
-    }
-  },
-  {
-    id: 'penja',
-    name: 'Poivre de Penja',
-    tag: 'Spice',
-    description: 'Volcanic-soil pepper with complex floral notes and long, clean heat. Designed for fine dining and premium spice blends.',
-    formats: 'Whole / ground',
-    packaging: '0.5kg / 1kg / bulk',
-    origin: 'Penja region, Central Africa',
-    specs: {
-      productType: 'White pepper (Piper nigrum)',
-      geoIndication: 'PGI-protected origin (Penja, Cameroon)',
-      flavor: 'Complex floral, citrus, long clean heat',
-      moisture: '< 12%',
-      packagingDetail: 'Food-grade bags or containers, vacuum-sealed options.',
-      shelfLife: '24 months (whole), 12 months (ground)',
-      applications: 'Fine dining, premium blends, white sauces, seafood',
-    }
-  },
-  {
-    id: 'mbongo',
-    name: 'Mbongo',
-    tag: 'Spice',
-    description: 'Deep, smoky spice used in traditional stews and sauces, now finding its place in Afro-fusion and modern gastronomy.',
-    formats: 'Whole / ground',
-    packaging: '0.5kg / 1kg / bulk',
-    origin: 'Central Africa',
-    specs: {
-      productType: 'Traditional smoked spice blend',
-      flavor: 'Deep smoky, earthy, umami complexity',
-      moisture: '< 10%',
-      packagingDetail: 'Food-grade bags, airtight containers.',
-      shelfLife: '18 months from production',
-      applications: 'Stews, sauces, Afro-fusion, meat rubs, marinades',
-    }
-  },
-  {
-    id: 'njansang',
-    name: 'Njansang',
-    tag: 'Seed / Spice',
-    description: 'Buttery, nutty seed used as a thickener and flavor enhancer in West and Central African cuisine.',
-    formats: 'Whole seed / ground',
-    packaging: '0.5kg / 1kg / bulk',
-    origin: 'Central Africa',
-    specs: {
-      productType: 'Ricinodendron heudelotii seeds',
-      flavor: 'Buttery, nutty, mild bitter undertone',
-      moisture: '< 8%',
-      packagingDetail: 'Food-grade bags, vacuum-sealed options.',
-      shelfLife: '18 months (whole), 12 months (ground)',
-      applications: 'Soups, stews, sauces, thickening agent',
-    }
-  },
-  {
-    id: 'cassava',
-    name: 'Cassava Flour',
-    tag: 'Flour',
-    description: 'Naturally gluten-free flour for bakeries, ethnic foods, and better-for-you formulations.',
-    formats: 'Fine / medium',
-    packaging: '25kg bags',
-    origin: 'Central Africa',
-    specs: {
-      productType: 'Cassava (Manihot esculenta) flour',
-      glutenFree: 'Yes, naturally gluten-free',
-      moisture: '< 12%',
-      particleSize: 'Fine to medium grind available',
-      packagingDetail: '25kg multi-wall paper bags, food-grade liner.',
-      shelfLife: '12 months from production',
-      applications: 'Gluten-free baking, ethnic foods, thickening, coatings',
-    }
-  },
-  {
-    id: 'tapioca',
-    name: 'Tapioca Flour',
-    tag: 'Flour',
-    description: 'Refined starch for boba tea, desserts, sauces, and texture control in food manufacturing.',
-    formats: 'Fine starch',
-    packaging: '25kg bags',
-    origin: 'Central Africa',
-    specs: {
-      productType: 'Tapioca starch (from cassava)',
-      glutenFree: 'Yes',
-      moisture: '< 13%',
-      purity: 'High purity refined starch',
-      packagingDetail: '25kg multi-wall paper bags.',
-      shelfLife: '24 months from production',
-      applications: 'Boba tea, desserts, sauces, binding, texture modification',
-    }
-  },
-];
+import { productCatalog } from '@/lib/products';
 
 // Sidebar Navigation Component
 function SidebarNav() {
@@ -222,9 +76,9 @@ function CatalogSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {catalogProducts.map((product, index) => (
+          {productCatalog.map((product, index) => (
             <motion.div
-              key={product.id}
+              key={product.slug}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.05 }}
@@ -259,16 +113,16 @@ function CatalogSection() {
                     <span className="text-[var(--gray-400)]">Formats:</span> {product.formats}
                   </p>
                   <p className="text-xs text-[var(--gray-500)]" style={{ fontWeight: 300 }}>
-                    <span className="text-[var(--gray-400)]">Packaging:</span> {product.packaging}
+                    <span className="text-[var(--gray-400)]">Packaging:</span> {product.packagingSummary}
                   </p>
                   <p className="text-xs text-[var(--gray-500)]" style={{ fontWeight: 300 }}>
-                    <span className="text-[var(--gray-400)]">Origin:</span> {product.origin}
+                    <span className="text-[var(--gray-400)]">Origin:</span> {product.originSummary}
                   </p>
                 </div>
                 
-                <a href={`#specs-${product.id}`} className="link-arrow text-xs mt-auto">
-                  View specs
-                </a>
+                <Link href={`/products/${product.slug}`} className="link-arrow text-xs mt-auto">
+                  View brochure →
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -304,17 +158,17 @@ function SpecsSection() {
         </motion.div>
 
         <div className="space-y-4">
-          {catalogProducts.map((product, index) => (
+          {productCatalog.map((product, index) => (
             <motion.div
-              key={product.id}
-              id={`specs-${product.id}`}
+              key={product.slug}
+              id={`specs-${product.slug}`}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="bg-white border border-[var(--gray-200)]"
             >
               <button
-                onClick={() => setExpandedProduct(expandedProduct === product.id ? null : product.id)}
+                onClick={() => setExpandedProduct(expandedProduct === product.slug ? null : product.slug)}
                 className="w-full flex items-center justify-between p-6 text-left hover:bg-[var(--gray-50)] transition-colors"
               >
                 <div className="flex items-center gap-4">
@@ -337,14 +191,14 @@ function SpecsSection() {
                   </h3>
                 </div>
                 <motion.span
-                  animate={{ rotate: expandedProduct === product.id ? 180 : 0 }}
+                  animate={{ rotate: expandedProduct === product.slug ? 180 : 0 }}
                   className="text-[var(--gray-400)]"
                 >
                   ↓
                 </motion.span>
               </button>
               
-              {expandedProduct === product.id && (
+              {expandedProduct === product.slug && (
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
@@ -353,23 +207,46 @@ function SpecsSection() {
                   className="border-t border-[var(--gray-200)]"
                 >
                   <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {Object.entries(product.specs).map(([key, value]) => (
-                      <div key={key} className="flex flex-col">
+                    {[
+                      { label: 'Scientific Name', value: product.scientificName },
+                      { label: 'Origin', value: product.originSummary },
+                      { label: 'Formats', value: product.formats },
+                      { label: 'Moisture Target', value: product.moisture },
+                      { label: 'Packaging', value: product.packagingSummary },
+                      { label: 'Shelf Life', value: product.shelfLife },
+                    ].map((spec) => (
+                      <div key={`${product.slug}-${spec.label}`} className="flex flex-col">
                         <span className="text-xs uppercase tracking-widest text-[var(--gray-400)] mb-1" style={{ fontWeight: 300 }}>
-                          {key.replace(/([A-Z])/g, ' $1').trim()}
+                          {spec.label}
                         </span>
                         <span className="text-sm text-[var(--gray-700)]" style={{ fontWeight: 400 }}>
-                          {value}
+                          {spec.value}
                         </span>
                       </div>
                     ))}
                   </div>
-                  <div className="px-6 pb-6 flex gap-4">
+                  <div className="px-6 pb-4">
+                    <p className="text-xs uppercase tracking-[0.2em] text-[var(--gray-400)] mb-3" style={{ fontFamily: 'var(--font-mono)' }}>
+                      Key Applications
+                    </p>
+                    <ul className="space-y-2 text-sm text-[var(--gray-600)]" style={{ fontFamily: 'var(--font-body)' }}>
+                      {[...product.applications.global.slice(0, 2), ...product.applications.regional.slice(0, 2)].map((application) => (
+                        <li key={`${product.slug}-${application}`} className="flex gap-2">
+                          <span className="text-[var(--yellow)]">→</span>
+                          <span>{application}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="px-6 pb-6 flex flex-wrap gap-4">
+                    <Link href={`/products/${product.slug}`} className="link-arrow text-xs">
+                      View brochure
+                    </Link>
+                    <Link href={`/lifecycle/${product.slug}`} className="link-arrow text-xs">
+                      Full life cycle
+                    </Link>
                     <Link href="/contact?subject=specs" className="link-arrow text-xs">
                       Request full COA
-                    </Link>
-                    <Link href="/contact?subject=samples" className="link-arrow text-xs">
-                      Request samples
                     </Link>
                   </div>
                 </motion.div>

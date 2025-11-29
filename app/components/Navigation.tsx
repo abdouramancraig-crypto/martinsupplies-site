@@ -25,6 +25,15 @@ const menuItems = [
       { name: 'Distributors', href: '/industries' },
     ]
   },
+  {
+    name: 'Programs',
+    href: '/programs/animal-feed',
+    submenu: [
+      { name: 'Animal Feed Program', href: '/programs/animal-feed' },
+      { name: 'Biomass & Energy Program', href: '/programs/biomass' },
+      { name: 'Partner Sign-Up', href: '/programs/partner-signup' },
+    ],
+  },
   { name: 'Standards', href: '/standards' },
   { name: 'Story', href: '/our-story' },
   { name: 'Wholesale', href: '/wholesale' },

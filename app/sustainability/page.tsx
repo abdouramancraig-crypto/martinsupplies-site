@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { CountUpNumber } from '../components/hooks/useCountUp';
 
@@ -392,6 +392,9 @@ export default function SustainabilityPage() {
         </div>
       </section>
 
+      {/* Circular CO2 Lifecycle - Animated on Scroll */}
+      <CircularLifecycleSection />
+
       {/* CTA */}
       <section className="section-spacing bg-white">
         <div className="container-custom text-center">
@@ -425,5 +428,274 @@ export default function SustainabilityPage() {
         </div>
       </section>
     </>
+  );
+}
+
+// Circular CO2 Lifecycle Component
+function CircularLifecycleSection() {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  const labelStyle = {
+    fontFamily: 'var(--font-mono)',
+    letterSpacing: '0.08em',
+  };
+
+  const lifecycleStages = [
+    {
+      id: 1,
+      title: 'Soil & Cultivation',
+      description: 'Volcanic soils, organic methods, no synthetic inputs',
+      co2Impact: '-20% emissions vs. conventional',
+      angle: 0,
+    },
+    {
+      id: 2,
+      title: 'Harvest & Processing',
+      description: 'Solar-powered facilities, minimal water use',
+      co2Impact: '-35% energy consumption',
+      angle: 60,
+    },
+    {
+      id: 3,
+      title: 'Packaging',
+      description: 'Biodegradable materials, recyclable containers',
+      co2Impact: '75% recyclable packaging',
+      angle: 120,
+    },
+    {
+      id: 4,
+      title: 'Ocean Freight',
+      description: 'Consolidated shipments, optimized routes',
+      co2Impact: '90% ocean vs. air freight',
+      angle: 180,
+    },
+    {
+      id: 5,
+      title: 'Distribution',
+      description: 'Port city hubs reduce inland transport',
+      co2Impact: '-40% last-mile emissions',
+      angle: 240,
+    },
+    {
+      id: 6,
+      title: 'Zero-Waste Disposal',
+      description: 'Biomass energy, animal feed, composting',
+      co2Impact: '100% circular use',
+      angle: 300,
+    },
+  ];
+
+  const [activeStage, setActiveStage] = useState(0);
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on('change', (latest) => {
+      const stageIndex = Math.floor(latest * lifecycleStages.length);
+      setActiveStage(Math.min(stageIndex, lifecycleStages.length - 1));
+    });
+
+    return () => unsubscribe();
+  }, [scrollYProgress, lifecycleStages.length]);
+
+  const rotation = useTransform(scrollYProgress, [0, 1], [0, 360]);
+
+  return (
+    <section ref={sectionRef} className="py-32 bg-[var(--black)] text-white relative overflow-hidden">
+      <div className="absolute inset-0 glow-subtle" />
+      
+      <div className="container-custom relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+          <p className="text-xs uppercase tracking-[0.2em] text-[var(--yellow)] mb-3" style={labelStyle}>
+            Full Circle
+          </p>
+          <h2 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
+            Our Low-Emission CO₂ Lifecycle
+          </h2>
+          <p className="lead text-white/70 max-w-3xl mx-auto">
+            From volcanic soil to zero-waste disposal, every stage of our supply chain is designed 
+            to minimize carbon emissions and maximize circular value.
+          </p>
+        </motion.div>
+
+        {/* Circular Diagram */}
+        <div className="relative max-w-4xl mx-auto">
+          <div className="aspect-square relative">
+            {/* Center Circle */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-48 h-48 rounded-full bg-[var(--yellow)]/10 border-2 border-[var(--yellow)]/30 flex flex-col items-center justify-center">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, type: 'spring' }}
+                  className="text-center"
+                >
+                  <div className="text-5xl font-bold text-[var(--yellow)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+                    -60%
+                  </div>
+                  <p className="text-xs text-white/60" style={labelStyle}>
+                    TOTAL CO₂ REDUCTION
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Rotating Circle Path */}
+            <motion.svg
+              className="absolute inset-0 w-full h-full"
+              viewBox="0 0 400 400"
+              style={{ rotate: rotation }}
+            >
+              <circle
+                cx="200"
+                cy="200"
+                r="150"
+                fill="none"
+                stroke="rgba(254, 255, 2, 0.2)"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+              />
+            </motion.svg>
+
+            {/* Lifecycle Stage Nodes */}
+            {lifecycleStages.map((stage, index) => {
+              const isActive = index <= activeStage;
+              const angleRad = (stage.angle * Math.PI) / 180;
+              const radius = 180;
+              const x = 50 + radius * Math.cos(angleRad - Math.PI / 2);
+              const y = 50 + radius * Math.sin(angleRad - Math.PI / 2);
+
+              return (
+                <motion.div
+                  key={stage.id}
+                  initial={{ scale: 0, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="absolute"
+                  style={{
+                    left: `${x}%`,
+                    top: `${y}%`,
+                    transform: 'translate(-50%, -50%)',
+                  }}
+                >
+                  <motion.div
+                    animate={{
+                      scale: isActive ? 1.1 : 1,
+                      backgroundColor: isActive ? 'var(--yellow)' : 'rgba(255, 255, 255, 0.1)',
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="w-16 h-16 rounded-full border-2 flex items-center justify-center cursor-pointer"
+                    style={{
+                      borderColor: isActive ? 'var(--yellow)' : 'rgba(255, 255, 255, 0.3)',
+                    }}
+                  >
+                    <span className="text-xl font-bold" style={{ color: isActive ? 'var(--black)' : 'white' }}>
+                      {stage.id}
+                    </span>
+                  </motion.div>
+
+                  {/* Stage Label */}
+                  <motion.div
+                    animate={{
+                      opacity: isActive ? 1 : 0.5,
+                      scale: isActive ? 1 : 0.9,
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute top-20 left-1/2 -translate-x-1/2 w-48 text-center"
+                  >
+                    <p className="text-xs font-semibold mb-1 text-[var(--yellow)]" style={labelStyle}>
+                      {stage.title}
+                    </p>
+                    <p className="text-xs text-white/60 mb-2" style={{ fontFamily: 'var(--font-body)' }}>
+                      {stage.description}
+                    </p>
+                    <p className="text-xs font-bold text-white" style={{ fontFamily: 'var(--font-display)' }}>
+                      {stage.co2Impact}
+                    </p>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Progress Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="mt-20 text-center"
+        >
+          <p className="text-sm text-white/60 mb-4" style={labelStyle}>
+            Scroll to explore each stage
+          </p>
+          <div className="flex justify-center gap-2">
+            {lifecycleStages.map((stage, index) => (
+              <motion.div
+                key={stage.id}
+                animate={{
+                  backgroundColor: index <= activeStage ? 'var(--yellow)' : 'rgba(255, 255, 255, 0.2)',
+                }}
+                transition={{ duration: 0.3 }}
+                className="w-12 h-1 rounded-full"
+              />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Key Metrics */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8 }}
+          className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8"
+        >
+          <div className="text-center">
+            <div className="text-4xl font-bold text-[var(--yellow)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+              90%
+            </div>
+            <p className="text-xs text-white/60" style={labelStyle}>
+              OCEAN FREIGHT
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl font-bold text-[var(--yellow)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+              75%
+            </div>
+            <p className="text-xs text-white/60" style={labelStyle}>
+              RECYCLABLE PACKAGING
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl font-bold text-[var(--yellow)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+              100%
+            </div>
+            <p className="text-xs text-white/60" style={labelStyle}>
+              CIRCULAR USE
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl font-bold text-[var(--yellow)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+              0
+            </div>
+            <p className="text-xs text-white/60" style={labelStyle}>
+              SYNTHETIC INPUTS
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 }
