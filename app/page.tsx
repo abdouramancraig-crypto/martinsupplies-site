@@ -8,8 +8,22 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 // Hero Section - Authority & Credibility
 function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-[var(--black)] via-[#0d1f3c] to-[#071020]">
-      {/* Background Pattern */}
+    <section className="min-h-screen flex items-center relative overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/Intro Movie.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Dark Overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--black)]/70 via-[#0d1f3c]/60 to-[#071020]/70" />
+      
+      {/* Subtle Pattern Overlay */}
       <div 
         className="absolute inset-0 opacity-5"
         style={{
