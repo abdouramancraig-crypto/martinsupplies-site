@@ -44,7 +44,7 @@ export default function WholesalePage() {
   };
 
   return (
-    <>
+    <main>
       {/* Hero */}
       <section ref={heroRef} className="pt-40 pb-20 relative overflow-hidden">
         <div className="absolute inset-0 glow-subtle" />
@@ -371,6 +371,6 @@ export default function WholesalePage() {
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }

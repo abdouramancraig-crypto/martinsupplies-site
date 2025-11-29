@@ -67,10 +67,21 @@ function CatalogSection() {
   const handleCatalogSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
+    
+    // Simulate API call (save lead information)
     await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Trigger PDF download
+    const link = document.createElement('a');
+    link.href = '/MartinSupplies_Catalog_Pro.pdf';
+    link.download = 'MartinSupplies_Catalog_Pro.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
     setIsSubmitting(false);
     setIsSubmitted(true);
+    
     // Reset after 3 seconds
     setTimeout(() => {
       setShowCatalogPopup(false);
@@ -150,11 +161,11 @@ function CatalogSection() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'var(--font-display)' }}>
-                    Thank You!
+                  <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
+                    Download Started!
                   </h3>
-                  <p className="text-[var(--gray-600)]" style={{ fontWeight: 400 }}>
-                    You'll receive our full catalog and be among the first to know about new exotic products.
+                  <p className="text-[var(--gray-600)]" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
+                    Your catalog is downloading now. You'll also be notified when new exotic products become available and get priority ordering access.
                   </p>
                 </div>
               ) : (
