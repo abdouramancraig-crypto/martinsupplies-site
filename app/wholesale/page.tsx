@@ -249,6 +249,7 @@ export default function WholesalePage() {
                         value={formData.businessName}
                         onChange={handleChange}
                         required
+                        autoComplete="organization"
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
                         style={{ fontWeight: 400 }}
                       />
@@ -261,6 +262,7 @@ export default function WholesalePage() {
                         value={formData.contactName}
                         onChange={handleChange}
                         required
+                        autoComplete="name"
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
                         style={{ fontWeight: 400 }}
                       />
@@ -276,7 +278,7 @@ export default function WholesalePage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        suppressHydrationWarning
+                        autoComplete="email"
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
                         style={{ fontWeight: 400 }}
                       />
@@ -288,6 +290,7 @@ export default function WholesalePage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
+                        autoComplete="tel"
                         className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] focus:outline-none focus:border-[var(--black)] transition-colors"
                         style={{ fontWeight: 400 }}
                       />
@@ -340,6 +343,7 @@ export default function WholesalePage() {
                       value={formData.products}
                       onChange={handleChange}
                       placeholder="e.g., Penja Pepper, Non-GMO Corn, Cassava Flour"
+                      autoComplete="off"
                       className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] placeholder-[var(--gray-400)] focus:outline-none focus:border-[var(--black)] transition-colors"
                       style={{ fontWeight: 400 }}
                     />
@@ -353,6 +357,7 @@ export default function WholesalePage() {
                       onChange={handleChange}
                       rows={4}
                       placeholder="Tell us about your business and specific needs..."
+                      autoComplete="off"
                       className="w-full px-4 py-3 border border-[var(--gray-200)] bg-white text-[var(--black)] placeholder-[var(--gray-400)] focus:outline-none focus:border-[var(--black)] transition-colors resize-none"
                       style={{ fontWeight: 400 }}
                     />
