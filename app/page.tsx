@@ -39,17 +39,17 @@ function HeroSection() {
             transition={{ duration: 0.8 }}
           >
             {/* Credentials Badge */}
-            <div className="inline-block px-6 py-2 bg-[var(--yellow)]/10 border border-[var(--yellow)]/30 rounded-full text-[var(--yellow)] text-sm font-medium tracking-wider uppercase mb-8">
-              FDA-Registered • Non-GMO Verified • Est. 1987
+            <div className="inline-block px-6 py-2 bg-[var(--yellow)]/10 border border-[var(--yellow)]/30 rounded-full text-[var(--yellow)] text-xs uppercase mb-8" style={{ fontFamily: 'var(--font-mono)', letterSpacing: '0.08em' }}>
+              FDA-Registered • Non-GMO Verified
             </div>
             
-            <h1 className="text-5xl md:text-7xl text-white mb-8 leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
+            <h1 className="text-5xl md:text-7xl text-white mb-8 leading-tight" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
               Heritage Ingredients
               <br />
               <span className="text-[var(--yellow)]">Trusted by Michelin Chefs</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-12 leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
               Premium Non-GMO corn, soybeans, and rare Central African spices from 
               Cameroon's volcanic soil — sourced with integrity, delivered with excellence.
             </p>
@@ -63,10 +63,10 @@ function HeroSection() {
                 { number: 'FDA', label: 'Registered' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-[var(--yellow)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+                  <div className="text-3xl md:text-4xl text-[var(--yellow)] mb-2" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
                     {stat.number}
                   </div>
-                  <div className="text-sm text-white/60 uppercase tracking-wider">
+                  <div className="text-sm text-white/60 uppercase" style={{ fontFamily: 'var(--font-mono)', letterSpacing: '0.08em' }}>
                     {stat.label}
                   </div>
                 </div>
@@ -110,13 +110,13 @@ function NonGMOCommitment() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-[var(--yellow)]/10 text-[var(--brown)] text-xs font-medium rounded-full mb-6 tracking-wider uppercase">
+          <span className="inline-block px-4 py-1.5 bg-[var(--yellow)]/10 text-[var(--brown)] text-xs rounded-full mb-6 uppercase" style={{ fontFamily: 'var(--font-mono)', letterSpacing: '0.08em' }}>
             Our Foundation
           </span>
-          <h2 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+          <h2 className="text-4xl md:text-5xl mb-6" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
             OUR NON-GMO COMMITMENT
           </h2>
-          <p className="text-xl text-[var(--gray-600)] max-w-3xl mx-auto mb-8" style={{ fontWeight: 400 }}>
+          <p className="text-xl text-[var(--gray-600)] max-w-3xl mx-auto mb-8" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
             Every kernel, bean, and spice is grown naturally in Cameroon's mineral-rich volcanic soil—
             without synthetic fertilizers, GMOs, or harmful pesticides.
           </p>
@@ -135,10 +135,10 @@ function NonGMOCommitment() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-xl mb-3 font-semibold" style={{ fontFamily: 'var(--font-display)' }}>
+            <h3 className="text-xl mb-3" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
               Volcanic Soil Advantage
             </h3>
-            <p className="text-[var(--gray-600)] text-sm leading-relaxed" style={{ fontWeight: 400 }}>
+            <p className="text-[var(--gray-600)] text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
               Cameroon's volcanic regions provide naturally mineral-rich soil (high in potassium, 
               phosphorus, and nitrogen) that enhances flavor intensity and nutritional density 
               without artificial inputs.
@@ -156,10 +156,10 @@ function NonGMOCommitment() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-xl mb-3 font-semibold" style={{ fontFamily: 'var(--font-display)' }}>
+            <h3 className="text-xl mb-3" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
               Perfect Subtropical Climate
             </h3>
-            <p className="text-[var(--gray-600)] text-sm leading-relaxed mb-4" style={{ fontWeight: 400 }}>
+            <p className="text-[var(--gray-600)] text-sm leading-relaxed mb-4" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
               Year-round optimal growing conditions with stable temperatures (20-28°C), 
               consistent rainfall (1,500-3,000mm annually), and 70-85% humidity—ideal for 
               premium corn, soybeans, and rare spices.
@@ -191,10 +191,10 @@ function NonGMOCommitment() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
               </svg>
             </div>
-            <h3 className="text-xl mb-3 font-semibold" style={{ fontFamily: 'var(--font-display)' }}>
+            <h3 className="text-xl mb-3" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
               Heritage Farming Practices
             </h3>
-            <p className="text-[var(--gray-600)] text-sm leading-relaxed" style={{ fontWeight: 400 }}>
+            <p className="text-[var(--gray-600)] text-sm leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
               Hand-harvested by smallholder farmers using generations-old techniques. 
               No synthetic pesticides, no genetic modification—just time-tested methods 
               that preserve authenticity and heritage.
@@ -340,13 +340,13 @@ function SustainabilityPrograms() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-[var(--yellow)]/20 backdrop-blur-sm border border-[var(--yellow)]/40 text-[var(--yellow)] text-xs font-medium rounded-full mb-6 tracking-wider uppercase shadow-lg">
+          <span className="inline-block px-4 py-1.5 bg-[var(--yellow)]/20 backdrop-blur-sm border border-[var(--yellow)]/40 text-[var(--yellow)] text-xs rounded-full mb-6 uppercase shadow-lg" style={{ fontFamily: 'var(--font-mono)', letterSpacing: '0.08em' }}>
             Environmental Impact
           </span>
-          <h2 className="text-4xl md:text-5xl text-white mb-6 drop-shadow-2xl" style={{ fontFamily: 'var(--font-display)', textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
+          <h2 className="text-4xl md:text-5xl text-white mb-6 drop-shadow-2xl" style={{ fontFamily: 'var(--font-display)', fontWeight: 600, textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
             JOIN OUR PROGRAMS
           </h2>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto drop-shadow-lg" style={{ fontWeight: 400, textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto drop-shadow-lg" style={{ fontFamily: 'var(--font-body)', fontWeight: 400, textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
             Sustainability isn't an afterthought—it's built into every step of our supply chain.
           </p>
         </motion.div>
@@ -361,10 +361,10 @@ function SustainabilityPrograms() {
             <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[var(--yellow)]/20 backdrop-blur-sm border-2 border-[var(--yellow)]/50 flex items-center justify-center shadow-lg">
               <span className="text-3xl">♻️</span>
             </div>
-            <h3 className="text-2xl text-white mb-4 drop-shadow-lg" style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+            <h3 className="text-2xl text-white mb-4 drop-shadow-lg" style={{ fontFamily: 'var(--font-display)', fontWeight: 600, textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
               FULL CYCLE
             </h3>
-            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontWeight: 400 }}>
+            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
               By-products from corn and soy processing are repurposed for animal feed 
               and biomass energy—nothing goes to waste.
             </p>
@@ -379,10 +379,10 @@ function SustainabilityPrograms() {
             <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[var(--yellow)]/20 backdrop-blur-sm border-2 border-[var(--yellow)]/50 flex items-center justify-center shadow-lg">
               <span className="text-3xl">🌱</span>
             </div>
-            <h3 className="text-2xl text-white mb-4 drop-shadow-lg" style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+            <h3 className="text-2xl text-white mb-4 drop-shadow-lg" style={{ fontFamily: 'var(--font-display)', fontWeight: 600, textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
               ZERO WASTE
             </h3>
-            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontWeight: 400 }}>
+            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
               100% of our agricultural by-products are utilized. Crop residue becomes 
               feed or compost, ensuring complete resource utilization.
             </p>
@@ -397,10 +397,10 @@ function SustainabilityPrograms() {
             <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[var(--yellow)]/20 backdrop-blur-sm border-2 border-[var(--yellow)]/50 flex items-center justify-center shadow-lg">
               <span className="text-3xl">🌍</span>
             </div>
-            <h3 className="text-2xl text-white mb-4 drop-shadow-lg" style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+            <h3 className="text-2xl text-white mb-4 drop-shadow-lg" style={{ fontFamily: 'var(--font-display)', fontWeight: 600, textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
               LOW EMISSIONS
             </h3>
-            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontWeight: 400 }}>
+            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
               Direct-ship logistics, minimal processing, and strategic port locations 
               reduce carbon footprint throughout our supply chain.
             </p>
@@ -646,55 +646,55 @@ function SolutionStatement() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <span className="inline-block px-4 py-1.5 bg-[var(--yellow)]/10 text-[var(--brown)] text-xs font-medium rounded-full mb-6 tracking-wider uppercase">
+            <span className="inline-block px-4 py-1.5 bg-[var(--yellow)]/10 text-[var(--brown)] text-xs rounded-full mb-6 uppercase" style={{ fontFamily: 'var(--font-mono)', letterSpacing: '0.08em' }}>
               Our Solution
             </span>
             
-            <h2 className="text-4xl md:text-5xl mb-8" style={{ fontFamily: 'var(--font-display)' }}>
+            <h2 className="text-4xl md:text-5xl mb-8" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
               We Deliver What Others Can't
             </h2>
             
-            <p className="text-2xl text-[var(--gray-700)] mb-12 leading-relaxed" style={{ fontFamily: 'var(--font-display)', fontWeight: 400 }}>
+            <p className="text-2xl text-[var(--gray-700)] mb-12 leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
               The finest Non-GMO corn, soybeans, and rare Central African spices—
               <span className="text-[var(--yellow)]"> hand-harvested in the best region in the world to grow them</span>.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <div className="card text-left">
-                <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+                <h3 className="text-xl mb-4" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
                   🌋 Volcanic Terroir
                 </h3>
-                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontWeight: 400 }}>
+                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
                   Grown in Cameroon's Penja valley and volcanic highlands—regions globally 
                   recognized for producing the world's most flavorful pepper, corn, and legumes.
                 </p>
               </div>
               
               <div className="card text-left">
-                <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+                <h3 className="text-xl mb-4" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
                   ✋ Hand-Harvested
                 </h3>
-                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontWeight: 400 }}>
+                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
                   Picked at peak ripeness by skilled smallholder farmers using generations 
                   of inherited knowledge—never mechanized, always quality-first.
                 </p>
               </div>
               
               <div className="card text-left">
-                <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+                <h3 className="text-xl mb-4" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
                   📜 Fully Traceable
                 </h3>
-                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontWeight: 400 }}>
+                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
                   Every batch includes farm-to-port documentation, lab certifications, 
                   and compliance records—transparency you can trust.
                 </p>
               </div>
               
               <div className="card text-left">
-                <h3 className="text-xl font-semibold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+                <h3 className="text-xl mb-4" style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>
                   ⚡ FDA Compliant
                 </h3>
-                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontWeight: 400 }}>
+                <p className="text-[var(--gray-600)] leading-relaxed" style={{ fontFamily: 'var(--font-body)', fontWeight: 400 }}>
                   Every shipment meets or exceeds FDA import requirements with full FSVP 
                   support and third-party verification.
                 </p>
