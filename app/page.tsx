@@ -318,9 +318,20 @@ function SustainabilityPrograms() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="section-spacing bg-[var(--black)] text-white relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[var(--yellow)]/5 rounded-full blur-3xl" />
+    <section ref={ref} className="section-spacing relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/environment-impact-bg.jpg)',
+        }}
+      />
+      
+      {/* Dark Overlay for Text Contrast */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--black)]/85 via-[var(--black)]/80 to-[var(--black)]/85" />
+      
+      {/* Additional subtle overlay for better readability */}
+      <div className="absolute inset-0 bg-[#0d1f3c]/40" />
       
       <div className="container-custom relative z-10">
         <motion.div
@@ -329,13 +340,13 @@ function SustainabilityPrograms() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-[var(--yellow)]/10 text-[var(--yellow)] text-xs font-medium rounded-full mb-6 tracking-wider uppercase">
+          <span className="inline-block px-4 py-1.5 bg-[var(--yellow)]/20 backdrop-blur-sm border border-[var(--yellow)]/40 text-[var(--yellow)] text-xs font-medium rounded-full mb-6 tracking-wider uppercase shadow-lg">
             Environmental Impact
           </span>
-          <h2 className="text-4xl md:text-5xl text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
+          <h2 className="text-4xl md:text-5xl text-white mb-6 drop-shadow-2xl" style={{ fontFamily: 'var(--font-display)', textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>
             JOIN OUR PROGRAMS
           </h2>
-          <p className="text-xl text-white/70 max-w-3xl mx-auto" style={{ fontWeight: 300 }}>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto drop-shadow-lg" style={{ fontWeight: 300, textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
             Sustainability isn't an afterthought—it's built into every step of our supply chain.
           </p>
         </motion.div>
@@ -345,15 +356,15 @@ function SustainabilityPrograms() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-center"
+            className="text-center p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl"
           >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[var(--yellow)]/10 border-2 border-[var(--yellow)]/30 flex items-center justify-center">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[var(--yellow)]/20 backdrop-blur-sm border-2 border-[var(--yellow)]/50 flex items-center justify-center shadow-lg">
               <span className="text-3xl">♻️</span>
             </div>
-            <h3 className="text-2xl text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+            <h3 className="text-2xl text-white mb-4 drop-shadow-lg" style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
               FULL CYCLE
             </h3>
-            <p className="text-white/60 leading-relaxed" style={{ fontWeight: 300 }}>
+            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontWeight: 300 }}>
               By-products from corn and soy processing are repurposed for animal feed 
               and biomass energy—nothing goes to waste.
             </p>
@@ -363,15 +374,15 @@ function SustainabilityPrograms() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-center"
+            className="text-center p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl"
           >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[var(--yellow)]/10 border-2 border-[var(--yellow)]/30 flex items-center justify-center">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[var(--yellow)]/20 backdrop-blur-sm border-2 border-[var(--yellow)]/50 flex items-center justify-center shadow-lg">
               <span className="text-3xl">🌱</span>
             </div>
-            <h3 className="text-2xl text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+            <h3 className="text-2xl text-white mb-4 drop-shadow-lg" style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
               ZERO WASTE
             </h3>
-            <p className="text-white/60 leading-relaxed" style={{ fontWeight: 300 }}>
+            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontWeight: 300 }}>
               100% of our agricultural by-products are utilized. Crop residue becomes 
               feed or compost, ensuring complete resource utilization.
             </p>
@@ -381,15 +392,15 @@ function SustainabilityPrograms() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-center"
+            className="text-center p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl"
           >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[var(--yellow)]/10 border-2 border-[var(--yellow)]/30 flex items-center justify-center">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[var(--yellow)]/20 backdrop-blur-sm border-2 border-[var(--yellow)]/50 flex items-center justify-center shadow-lg">
               <span className="text-3xl">🌍</span>
             </div>
-            <h3 className="text-2xl text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+            <h3 className="text-2xl text-white mb-4 drop-shadow-lg" style={{ fontFamily: 'var(--font-display)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
               LOW EMISSIONS
             </h3>
-            <p className="text-white/60 leading-relaxed" style={{ fontWeight: 300 }}>
+            <p className="text-white/90 leading-relaxed drop-shadow-md" style={{ fontWeight: 300 }}>
               Direct-ship logistics, minimal processing, and strategic port locations 
               reduce carbon footprint throughout our supply chain.
             </p>
@@ -403,13 +414,13 @@ function SustainabilityPrograms() {
           className="text-center"
         >
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/programs/animal-feed" className="btn-secondary border-white text-white hover:bg-white hover:text-[var(--black)]">
+            <Link href="/programs/animal-feed" className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/40 text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--black)] transition-all shadow-xl">
               Animal Feed Program
             </Link>
-            <Link href="/programs/biomass" className="btn-secondary border-white text-white hover:bg-white hover:text-[var(--black)]">
+            <Link href="/programs/biomass" className="px-8 py-4 bg-white/10 backdrop-blur-md border-2 border-white/40 text-white font-semibold rounded-lg hover:bg-white hover:text-[var(--black)] transition-all shadow-xl">
               Biomass & Energy
             </Link>
-            <Link href="/sustainability" className="btn-secondary border-white text-white hover:bg-white hover:text-[var(--black)]">
+            <Link href="/sustainability" className="px-8 py-4 bg-[var(--yellow)] backdrop-blur-md border-2 border-[var(--yellow)] text-[var(--black)] font-semibold rounded-lg hover:bg-white hover:border-white transition-all shadow-xl">
               Learn More
             </Link>
           </div>
