@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 
 // Hero Section - Authority & Credibility
@@ -257,10 +258,10 @@ function FDAStandards() {
           >
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: '📋', title: 'Documentation', desc: 'Complete records' },
-                { icon: '🔬', title: 'Lab Tested', desc: 'Third-party verified' },
-                { icon: '🏛️', title: 'FDA Registered', desc: 'Facility approved' },
-                { icon: '✅', title: 'Certified', desc: 'Non-GMO verified' },
+                { icon: '📋', type: 'emoji', title: 'Documentation', desc: 'Complete records' },
+                { icon: '🔬', type: 'emoji', title: 'Lab Tested', desc: 'Third-party verified' },
+                { icon: '/images/fda-registered.png', type: 'image', title: 'FDA Registered', desc: 'Facility approved' },
+                { icon: '/images/fda-approved.png', type: 'image', title: 'Non-GMO Certified', desc: 'FDA verified' },
               ].map((item, i) => (
                 <motion.div
                   key={item.title}
@@ -269,7 +270,20 @@ function FDAStandards() {
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
                   className="card text-center"
                 >
-                  <div className="text-4xl mb-3">{item.icon}</div>
+                  <div className="h-16 flex items-center justify-center mb-3">
+                    {item.type === 'emoji' ? (
+                      <div className="text-4xl">{item.icon}</div>
+                    ) : (
+                      <div className="relative w-16 h-16">
+                        <Image
+                          src={item.icon}
+                          alt={item.title}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                    )}
+                  </div>
                   <h4 className="font-semibold mb-1" style={{ fontFamily: 'var(--font-display)' }}>
                     {item.title}
                   </h4>
