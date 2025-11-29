@@ -102,7 +102,7 @@ export default function SourcingPage() {
             <span className="inline-block px-4 py-1.5 bg-[var(--accent-gold)]/10 text-[var(--accent-gold)] text-sm font-medium rounded-full mb-6 tracking-wider uppercase">
               Sourcing & Certifications
             </span>
-            <h1 className="text-white mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <h1 className="text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
               Trust Through Transparency
             </h1>
             <p className="text-white/70 text-lg leading-relaxed">
@@ -157,7 +157,7 @@ export default function SourcingPage() {
                   <span className="inline-block px-4 py-1.5 bg-[var(--accent-gold)]/10 text-[var(--accent-gold)] text-sm font-medium rounded-full mb-6 tracking-wider uppercase">
                     Ethical Sourcing
                   </span>
-                  <h2 className="text-[var(--primary-dark)] mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+                  <h2 className="text-[var(--primary-dark)] mb-6" style={{ fontFamily: 'var(--font-display)' }}>
                     Handpicked with Care, Grown with Integrity
                   </h2>
                   <div className="space-y-4 text-[var(--dark-gray)]/70 leading-relaxed">
@@ -203,7 +203,7 @@ export default function SourcingPage() {
 
               {/* Farmer Stories Carousel */}
               <div>
-                <h3 className="text-[var(--primary-dark)] text-2xl mb-8 text-center" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <h3 className="text-[var(--primary-dark)] text-2xl mb-8 text-center" style={{ fontFamily: 'var(--font-display)' }}>
                   Meet Our Partners
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -252,7 +252,7 @@ export default function SourcingPage() {
                   <span className="inline-block px-4 py-1.5 bg-[var(--accent-gold)]/10 text-[var(--accent-gold)] text-sm font-medium rounded-full mb-6 tracking-wider uppercase">
                     Soil & Terroir
                   </span>
-                  <h2 className="text-[var(--primary-dark)] mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+                  <h2 className="text-[var(--primary-dark)] mb-6" style={{ fontFamily: 'var(--font-display)' }}>
                     The Land That Creates Excellence
                   </h2>
                   <div className="space-y-4 text-[var(--dark-gray)]/70 leading-relaxed">
@@ -273,7 +273,7 @@ export default function SourcingPage() {
 
               {/* Comparison Chart */}
               <div className="bg-[var(--light-gray)] rounded-2xl p-8 md:p-12">
-                <h3 className="text-[var(--primary-dark)] text-xl mb-8 text-center" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <h3 className="text-[var(--primary-dark)] text-xl mb-8 text-center" style={{ fontFamily: 'var(--font-display)' }}>
                   Why Cameroon Terroir is Superior
                 </h3>
                 <div className="overflow-x-auto">
@@ -321,7 +321,7 @@ export default function SourcingPage() {
                 <span className="inline-block px-4 py-1.5 bg-[var(--accent-gold)]/10 text-[var(--accent-gold)] text-sm font-medium rounded-full mb-6 tracking-wider uppercase">
                   Certifications & Compliance
                 </span>
-                <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                   Industry-Leading Standards
                 </h2>
                 <p className="text-[var(--dark-gray)]/70 max-w-2xl mx-auto">
@@ -357,7 +357,7 @@ export default function SourcingPage() {
 
               {/* Document Downloads */}
               <div className="bg-[var(--primary-dark)] rounded-2xl p-8 md:p-12">
-                <h3 className="text-white text-xl mb-6 text-center" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <h3 className="text-white text-xl mb-6 text-center" style={{ fontFamily: 'var(--font-display)' }}>
                   Documentation Downloads
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -389,7 +389,7 @@ export default function SourcingPage() {
 
               {/* Lot Traceability */}
               <div className="mt-16 bg-[var(--light-gray)] rounded-2xl p-8 md:p-12">
-                <h3 className="text-[var(--primary-dark)] text-xl mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <h3 className="text-[var(--primary-dark)] text-xl mb-6" style={{ fontFamily: 'var(--font-display)' }}>
                   Lot Traceability Checker
                 </h3>
                 <p className="text-[var(--dark-gray)]/70 mb-6">
@@ -435,7 +435,7 @@ export default function SourcingPage() {
                 <span className="inline-block px-4 py-1.5 bg-[var(--accent-gold)]/10 text-[var(--accent-gold)] text-sm font-medium rounded-full mb-6 tracking-wider uppercase">
                   Processing Methods
                 </span>
-                <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                   From Harvest to Your Door
                 </h2>
                 <p className="text-[var(--dark-gray)]/70 max-w-2xl mx-auto">
@@ -530,7 +530,7 @@ export default function SourcingPage() {
                         </div>
                       </div>
                       
-                      <h3 className="text-[var(--primary-dark)] text-3xl font-bold mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+                      <h3 className="text-[var(--primary-dark)] text-3xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                         {processingSteps[activeStep - 1].title}
                       </h3>
                       
@@ -607,7 +607,7 @@ export default function SourcingPage() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="text-white mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <h2 className="text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
               Questions About Our Sourcing?
             </h2>
             <p className="text-white/70 mb-8">

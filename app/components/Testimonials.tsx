@@ -49,7 +49,7 @@ export default function Testimonials() {
           <span className="inline-block px-4 py-1.5 bg-[var(--accent-gold)]/10 text-[var(--accent-gold)] text-sm font-medium rounded-full mb-4 tracking-wider uppercase">
             Testimonials
           </span>
-          <h2 className="text-[var(--primary-dark)]" style={{ fontFamily: 'var(--font-playfair)' }}>
+          <h2 className="text-[var(--primary-dark)]" style={{ fontFamily: 'var(--font-display)' }}>
             Trusted by Culinary Professionals
           </h2>
         </motion.div>

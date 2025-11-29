@@ -55,7 +55,7 @@ export default function CredibilityIcons() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+          <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-display)' }}>
             Trusted Quality Standards
           </h2>
           <p className="text-[var(--dark-gray)]/70 max-w-xl mx-auto">

@@ -41,7 +41,7 @@ export default function OriginStory() {
               className="absolute -bottom-6 -right-6 md:bottom-8 md:-right-8 bg-white p-6 rounded-xl shadow-2xl"
             >
               <div className="text-center">
-                <span className="block text-4xl font-bold text-[var(--accent-gold)]" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <span className="block text-4xl font-bold text-[var(--accent-gold)]" style={{ fontFamily: 'var(--font-display)' }}>
                   37+
                 </span>
                 <span className="text-[var(--dark-gray)] text-sm font-medium">
@@ -61,7 +61,7 @@ export default function OriginStory() {
               Our Heritage
             </span>
             
-            <h2 className="text-white mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <h2 className="text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
               A Legacy of Quality, From Central Africa to Your Kitchen
             </h2>
             

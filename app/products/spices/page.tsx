@@ -75,7 +75,7 @@ export default function SpicesPage() {
             <span className="block text-[#c45c26] text-sm font-medium tracking-wider uppercase mb-4">
               Exotic Spices
             </span>
-            <h1 className="text-white mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <h1 className="text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
               Rare Spices from the Heart of Africa
             </h1>
             <p className="text-white/70 max-w-2xl text-lg">
@@ -111,7 +111,7 @@ export default function SpicesPage() {
 
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-[var(--primary-dark)] text-xl" style={{ fontFamily: 'var(--font-playfair)' }}>
+                    <h3 className="text-[var(--primary-dark)] text-xl" style={{ fontFamily: 'var(--font-display)' }}>
                       {spice.name}
                     </h3>
                   </div>
@@ -179,7 +179,7 @@ export default function SpicesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-white mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <h2 className="text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
               Discover the Flavors of Africa
             </h2>
             <p className="text-white/70 mb-8 max-w-xl mx-auto">

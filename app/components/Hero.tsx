@@ -52,7 +52,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
           className="text-white mb-6 max-w-4xl mx-auto leading-tight"
-          style={{ fontFamily: 'var(--font-playfair)' }}
+          style={{ fontFamily: 'var(--font-display)' }}
         >
           Heritage-Grown Ingredients for the{' '}
           <span className="text-[var(--accent-gold)]">Modern World</span>

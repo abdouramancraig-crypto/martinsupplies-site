@@ -69,7 +69,7 @@ export default function GrainsPage() {
             <span className="block text-[#d4af37] text-sm font-medium tracking-wider uppercase mb-4">
               Premium Grains
             </span>
-            <h1 className="text-white mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <h1 className="text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
               Non-GMO Corn, Soybean & Ancient Grains
             </h1>
             <p className="text-white/70 max-w-2xl text-lg">
@@ -105,7 +105,7 @@ export default function GrainsPage() {
 
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-[var(--primary-dark)] text-xl" style={{ fontFamily: 'var(--font-playfair)' }}>
+                    <h3 className="text-[var(--primary-dark)] text-xl" style={{ fontFamily: 'var(--font-display)' }}>
                       {grain.name}
                     </h3>
                   </div>
@@ -154,7 +154,7 @@ export default function GrainsPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-white mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <h2 className="text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
               Interested in Our Grains?
             </h2>
             <p className="text-white/70 mb-8 max-w-xl mx-auto">

@@ -45,7 +45,7 @@ export default function DistributionMap() {
           <span className="inline-block px-4 py-1.5 bg-[var(--accent-gold)]/10 text-[var(--accent-gold)] text-sm font-medium rounded-full mb-4 tracking-wider uppercase">
             Distribution Network
           </span>
-          <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+          <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-display)' }}>
             Serving the US from Premium Port Cities
           </h2>
           <p className="text-[var(--dark-gray)]/70 max-w-2xl mx-auto">

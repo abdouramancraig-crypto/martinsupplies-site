@@ -48,7 +48,7 @@ export default function ProductShowcase() {
           <span className="inline-block px-4 py-1.5 bg-[var(--accent-gold)]/10 text-[var(--accent-gold)] text-sm font-medium rounded-full mb-4 tracking-wider uppercase">
             Our Products
           </span>
-          <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+          <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-display)' }}>
             Exceptional Ingredients, Exceptional Results
           </h2>
           <p className="text-[var(--dark-gray)]/70 max-w-2xl mx-auto">
@@ -143,7 +143,7 @@ function ProductCard({
             </span>
             <h3 
               className="text-[var(--primary-dark)] text-xl mb-3"
-              style={{ fontFamily: 'var(--font-playfair)' }}
+              style={{ fontFamily: 'var(--font-display)' }}
             >
               {product.title}
             </h3>

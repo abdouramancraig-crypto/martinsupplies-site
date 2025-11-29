@@ -132,7 +132,7 @@ export default function SustainabilityPage() {
             <span className="inline-block px-4 py-1.5 bg-[#2d5a3d]/30 text-[#5eba7d] text-sm font-medium rounded-full mb-6 tracking-wider uppercase">
               Sustainability
             </span>
-            <h1 className="text-white mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <h1 className="text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
               Growing Better, Sustainably
             </h1>
             <p className="text-white/70 text-lg leading-relaxed">
@@ -157,7 +157,7 @@ export default function SustainabilityPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-bold text-[var(--accent-gold)] mb-2" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <div className="text-4xl md:text-5xl font-bold text-[var(--accent-gold)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
                   <CountUpNumber 
                     end={stat.value} 
                     suffix={stat.suffix} 
@@ -202,7 +202,7 @@ export default function SustainabilityPage() {
                 <span className="text-sm font-medium tracking-wider uppercase mb-2 block" style={{ color: initiative.color }}>
                   {initiative.subtitle}
                 </span>
-                <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+                <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                   {initiative.title}
                 </h2>
                 <p className="text-[var(--dark-gray)]/70 leading-relaxed mb-6">
@@ -295,7 +295,7 @@ export default function SustainabilityPage() {
               <span className="inline-block px-4 py-1.5 bg-[var(--accent-gold)]/10 text-[var(--accent-gold)] text-sm font-medium rounded-full mb-6 tracking-wider uppercase">
                 Farmer Spotlight
               </span>
-              <h2 className="text-white mb-6" style={{ fontFamily: 'var(--font-playfair)' }}>
+              <h2 className="text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
                 The People Behind Our Products
               </h2>
               <div className="space-y-4 text-white/70 leading-relaxed">
@@ -344,7 +344,7 @@ export default function SustainabilityPage() {
             <span className="inline-block px-4 py-1.5 bg-[var(--accent-gold)]/10 text-[var(--accent-gold)] text-sm font-medium rounded-full mb-4 tracking-wider uppercase">
               Looking Ahead
             </span>
-            <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-display)' }}>
               Our 2030 Sustainability Goals
             </h2>
             <p className="text-[var(--dark-gray)]/70 max-w-2xl mx-auto">
@@ -363,7 +363,7 @@ export default function SustainabilityPage() {
                 className="bg-white rounded-xl p-6"
               >
                 <div className="flex justify-between items-start mb-4">
-                  <span className="text-3xl font-bold text-[var(--accent-gold)]" style={{ fontFamily: 'var(--font-playfair)' }}>
+                  <span className="text-3xl font-bold text-[var(--accent-gold)]" style={{ fontFamily: 'var(--font-display)' }}>
                     {item.target}
                   </span>
                   <span className="text-xs font-medium text-[var(--dark-gray)]/50 px-2 py-1 bg-[var(--light-gray)] rounded">
@@ -405,7 +405,7 @@ export default function SustainabilityPage() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-playfair)' }}>
+            <h2 className="text-[var(--primary-dark)] mb-4" style={{ fontFamily: 'var(--font-display)' }}>
               Partner With Purpose
             </h2>
             <p className="text-[var(--dark-gray)]/70 mb-8">
